@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CPSC418Trail.Properties
+namespace WpfApp1.Properties
 {
 
 
