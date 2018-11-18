@@ -6,8 +6,14 @@
              xmlns:local="clr-namespace:CPSC_481_Trailexplorers"
              mc:Ignorable="d" 
              Height="768" Width="432">
+
     <Grid Background="White">
-        <Image Name="logo" HorizontalAlignment="Center" Height="100" Margin="158,338,174,0" VerticalAlignment="Top" Width="100"
-               Source="BackgroundImages/logo.png" RenderOptions.BitmapScalingMode="Fant" Opacity="1" MouseDown="aPicture_MouseDown"/>
+        <Image Name="logo" Canvas.ZIndex="3" 
+               Source="Logos/logoWBold.png" RenderOptions.BitmapScalingMode="Fant" Opacity="1" MouseDown="aPicture_MouseDown" Margin="52,161,53,194"/>
+        <Viewbox Stretch="Uniform">
+            <Image Canvas.ZIndex="1" x:Name="background" Source="BackgroundImages/newBB.png" Stretch="UniformToFill"  VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Viewbox>
+
+
     </Grid>
 </UserControl>

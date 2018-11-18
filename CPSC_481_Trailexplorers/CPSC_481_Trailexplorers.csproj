@@ -124,13 +124,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Logos\" />
+    <Resource Include="BackgroundImages\newBB.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="BackgroundImages\trail.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="BackgroundImages\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\backArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackgroundImages\newB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logos\boldLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logos\logoWBold.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
