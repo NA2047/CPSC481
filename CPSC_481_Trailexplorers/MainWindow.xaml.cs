@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 
-namespace WpfApp1
+namespace CPSC_481_Trailexplorers
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,26 +24,18 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            //initialize MainWindow to Login page by default
+            Segue.pageSwitchWindow = this;
+            Segue.Switch(new LoadingPage());
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Navigate to UserControl page and display contents in MainWindow
+        /// </summary>
+        /// <param name="nextPage"></param>
+        public void To(UserControl nextPage)
         {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            this.Content = nextPage;
         }
     }
 }

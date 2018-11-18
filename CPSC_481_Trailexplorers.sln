@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPSC_481_Trailexplorers", "CPSC_481_Trailexplorers\CPSC_481_Trailexplorers.csproj", "{B48BE224-0B2C-4469-B79E-CC251AF71BEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B48BE224-0B2C-4469-B79E-CC251AF71BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48BE224-0B2C-4469-B79E-CC251AF71BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48BE224-0B2C-4469-B79E-CC251AF71BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48BE224-0B2C-4469-B79E-CC251AF71BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19521DEF-D644-4312-8CAA-091F5A9B5A75}
+	EndGlobalSection
+EndGlobal
