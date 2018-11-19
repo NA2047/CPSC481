@@ -8,7 +8,45 @@
              Height="768" Width="432"
             >
     <Grid Background="White">
-        <Button Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image Name="logo" Canvas.ZIndex="3" 
+               Source="Logos/logoWBold.png" RenderOptions.BitmapScalingMode="Fant" Opacity="1" Margin="108,0,108,570" Stretch="UniformToFill"/>
+        <Image HorizontalAlignment="Left" Height="46" Margin="0,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/backArrow.png" MouseDown="Back_MouseDown"/>
+        <Image HorizontalAlignment="Left" Margin="0,53,0,559" Width="432" Source="Backgroundimages/trail.png" Stretch="UniformToFill" >
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+        <Label Content="Please fill the following items" HorizontalAlignment="Left" Margin="108,225,0,0" VerticalAlignment="Top" Height="37" Width="216" FontSize="16"/>
+        <ComboBox IsEditable="True" Margin="40,267,229,0" Height="31" IsDropDownOpen="False" IsReadOnly="False" VerticalAlignment="Top" >
+            <ComboBoxItem Content="ALBERTA"/>
+            <ComboBoxItem Content="BRITISH COLUMBIA"/>
+            <ComboBoxItem Content="MANITOBA"/>
+            <ComboBoxItem Content="NEW BRUNSWICK"/>
+            <ComboBoxItem Content="NEWFOUNDLAND and LABRADOR"/>
+            <ComboBoxItem Content="NOVA SCOTIA"/>
+            <ComboBoxItem Content="ONTARIO"/>
+            <ComboBoxItem Content="PRINCE EDWARD ISLAND"/>
+            <ComboBoxItem Content="QUEBEC"/>
+            <ComboBoxItem Content="SASCATCHEWAN"/>
+            <ComboBoxItem Content="NORTHWEST TERRITORIES"/>
+            <ComboBoxItem Content="NUNAVUT"/>
+            <ComboBoxItem Content="YUKON"/>
+        </ComboBox>
+        <ComboBox IsEditable="True" Margin="233,267,36,0" Height="31" Background="Black" VerticalAlignment="Top">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="O"/>
+            <ComboBoxItem Content="P"/>
+            <ComboBoxItem Content="Q"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="Y"/>
+        </ComboBox>
 
     </Grid>
 </UserControl>

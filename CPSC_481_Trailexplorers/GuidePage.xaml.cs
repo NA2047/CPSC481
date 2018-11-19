@@ -24,5 +24,18 @@ namespace CPSC_481_Trailexplorers
         {
             InitializeComponent();
         }
+
+        private void Find_Hike(object sender, RoutedEventArgs e)
+        {
+            Segue.Switch(new HikeListPage());
+        }
+
+        private void Help_Filter(object sender, RoutedEventArgs e)
+        {
+            Segue.Switch(new FilterPage());
+        }
+
+
+
     }
 }

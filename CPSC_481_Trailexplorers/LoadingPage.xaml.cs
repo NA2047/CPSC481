@@ -42,7 +42,7 @@ namespace CPSC_481_Trailexplorers
 
         private void aPicture_MouseDown(object sender, MouseEventArgs e)
         {
-            Segue.Switch(new FilterPage());
+            Segue.Switch(new GuidePage());
         }
     }
 }

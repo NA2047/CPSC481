@@ -24,5 +24,9 @@ namespace CPSC_481_Trailexplorers
         {
             InitializeComponent();
         }
+        private void Back_MouseDown(object sender, MouseEventArgs e)
+        {
+            Segue.Switch(new GuidePage());
+        }
     }
 }
