@@ -24,9 +24,25 @@ namespace CPSC_481_Trailexplorers
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Moves View back to GuidePage Screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_MouseDown(object sender, MouseEventArgs e)
         {
             Segue.Switch(new GuidePage());
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Apply_Filter_Button(object sender, RoutedEventArgs e)
+        {
+            Segue.Switch(new HikeListPage());
+
         }
     }
 }
