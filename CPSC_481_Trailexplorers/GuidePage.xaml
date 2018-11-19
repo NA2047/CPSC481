@@ -10,10 +10,25 @@
         <Viewbox Stretch="Uniform">
             <Image Canvas.ZIndex="1" x:Name="background" Source="BackgroundImages/newBB.png" Stretch="UniformToFill"  VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Viewbox>
-        <Button x:Name="LetMe" Click="Find_Hike" Canvas.ZIndex="2" Content="Let" HorizontalAlignment="Left" Margin="31,239,0,0" VerticalAlignment="Top" Width="370" Height="95" FontSize="25"/>
-        <Button x:Name="HelpMe" Click="Help_Filter" Canvas.ZIndex="2" Content="Help" HorizontalAlignment="Left" Margin="31,429,0,0" VerticalAlignment="Top" Width="370" Height="95" FontSize="25"/>
-        <TextBlock Foreground="White" x:Name="letButtonText" HorizontalAlignment="Left" Margin="31,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="85" Width="370" FontSize="25" TextDecorations="{x:Null}" FontWeight="Bold" FontStyle="Italic" Opacity="0.8" TextAlignment="Center"><Run Text="Search "/><Run Text="for a "/><Run Text="Hike"/></TextBlock>
-        <TextBlock Foreground="White" x:Name="HelpButtonText" HorizontalAlignment="Left" Margin="31,524,0,0" TextWrapping="Wrap" Text="Walkthrough for new Hikers" VerticalAlignment="Top" Height="85" Width="370" FontSize="25" TextDecorations="{x:Null}" FontWeight="Bold" FontStyle="Italic" Opacity="0.8" TextAlignment="Center"/>
+        <Button x:Name="LetMe" Click="Find_Hike" Canvas.ZIndex="2" Content="Let" HorizontalAlignment="Left" Margin="31,239,0,0" VerticalAlignment="Top" Width="370" Height="95" FontSize="25">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="HelpMe" Click="Help_Filter" Canvas.ZIndex="2" Content="Help" HorizontalAlignment="Left" Margin="31,429,0,0" VerticalAlignment="Top" Width="370" Height="95" FontSize="25">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <TextBlock Foreground="White" x:Name="letButtonText" HorizontalAlignment="Left" Margin="31,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="85" Width="370" FontSize="25" TextDecorations="{x:Null}" FontWeight="Bold" FontStyle="Italic" Opacity="0.8" TextAlignment="Center">
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="2" RenderingBias="Quality"/>
+            </TextBlock.Effect><Run Text="Search "/><Run Text="for a "/><Run Text="Hike"/></TextBlock>
+        <TextBlock Foreground="White" x:Name="HelpButtonText" HorizontalAlignment="Left" Margin="31,524,0,0" TextWrapping="Wrap" Text="Walkthrough for new Hikers" VerticalAlignment="Top" Height="85" Width="370" FontSize="25" TextDecorations="{x:Null}" FontWeight="Bold" FontStyle="Italic" Opacity="0.8" TextAlignment="Center">
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="2" RenderingBias="Quality"/>
+            </TextBlock.Effect>
+        </TextBlock>
 
 
     </Grid>
