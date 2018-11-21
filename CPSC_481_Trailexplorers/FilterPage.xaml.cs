@@ -21,6 +21,7 @@ namespace CPSC_481_Trailexplorers
     /// </summary>
     public partial class FilterPage : UserControl
     {
+
         Hashtable filterResults = new Hashtable();
 
         public FilterPage()
@@ -38,20 +39,25 @@ namespace CPSC_481_Trailexplorers
         }
 
         /// <summary>
-        /// 
+        /// send filter results here
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Apply_Filter_Button(object sender, RoutedEventArgs e)
         {
 
-            if(Check_Location() || Check_Radio() || Check_Slider())
+            if(Check_Location() && Check_Radio() && Check_Slider())
             {
                 Segue.Switch(new HikeListPage());
             }
+
             
         }
 
+         /// <summary>
+         /// 
+         /// </summary>
+         /// <returns></returns>
         private bool Check_Location()
         {
           
@@ -64,7 +70,10 @@ namespace CPSC_481_Trailexplorers
             return true;
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private bool Check_Radio()
         {
 
@@ -79,14 +88,17 @@ namespace CPSC_481_Trailexplorers
             return true;
          
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private bool Check_Slider()
         {
             Double sTime = sliderTime.Value;
             Double sElevation = sliderElevation.Value;
             Double sDistance = sliderDistance.Value;
 
-            if(sTime == 0.0 || sElevation == 0.0 || sDistance == 0.0)
+            if(sTime == 0 || sElevation == 0 || sDistance == 0)
             {
                 return false;
             }
@@ -100,5 +112,19 @@ namespace CPSC_481_Trailexplorers
         }
 
 
+        private void SliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            timeValueLabel.Content = sliderTime.Value.ToString();
+        }
+
+        private void SliderDistance_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            distanceValueLabel.Content = sliderDistance.Value.ToString();
+        }
+
+        private void SliderElevation_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            elevationValueLabel.Content = sliderElevation.Value.ToString();
+        }
     }
 }
