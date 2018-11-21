@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 
-namespace CPSC418Trail
+namespace CPSC_481_Trailexplorers
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +24,18 @@ namespace CPSC418Trail
         public MainWindow()
         {
             InitializeComponent();
+            //initialize MainWindow to Login page by default
+            Segue.pageSwitchWindow = this;
+            Segue.Switch(new LoadingPage());
+        }
+
+        /// <summary>
+        /// Navigate to UserControl page and display contents in MainWindow
+        /// </summary>
+        /// <param name="nextPage"></param>
+        public void To(UserControl nextPage)
+        {
+            this.Content = nextPage;
         }
     }
 }

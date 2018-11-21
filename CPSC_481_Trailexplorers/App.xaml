@@ -1,7 +1,7 @@
-﻿<Application x:Class="CPSC418Trail.App"
+﻿<Application x:Class="CPSC_481_Trailexplorers.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CPSC418Trail"
+             xmlns:local="clr-namespace:CPSC_481_Trailexplorers"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CPSC418Trail.Properties
+namespace CPSC_481_Trailexplorers.Properties
 {
 
 
