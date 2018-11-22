@@ -20,14 +20,48 @@ namespace CPSC_481_Trailexplorers
     /// </summary>
     public partial class HikeListPage : UserControl
     {
+
         public HikeListPage()
         {
             InitializeComponent();
+            test();
+           
         }
 
         private void Back_MouseDown(object sender, MouseEventArgs e)
         {
             Segue.Switch(new FilterPage());
         }
+
+        private void test()
+        {
+            hikeListView.Children.Clear();
+            List<HikeItem> hikeList;
+
+            HikeItem hikeitem = new HikeItem();
+            HikeItem hikeitem1 = new HikeItem();
+            HikeItem hikeitem2 = new HikeItem();
+            HikeItem hikeitem3 = new HikeItem();
+            HikeItem hikeitem4 = new HikeItem();
+            HikeItem hikeitem5 = new HikeItem();
+            HikeItem[] RolesList = new HikeItem[] { hikeitem, hikeitem1, hikeitem2, hikeitem3, hikeitem4, hikeitem5 };
+
+            foreach (var item in RolesList)
+            {
+                hikeListView.Children.Add(item);
+            }
+        }
+
+        public void SearchBoxInput_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+         
+
+
+
+
+
+
+
+    }
     }
 }
