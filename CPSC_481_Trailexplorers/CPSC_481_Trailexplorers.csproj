@@ -73,6 +73,7 @@
     <Compile Include="LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MarginSetter.cs" />
     <Compile Include="Segue.cs" />
     <Page Include="FilterPage.xaml">
       <SubType>Designer</SubType>

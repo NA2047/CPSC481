@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace CPSC_481_Trailexplorers
 {
     /// <summary>
@@ -20,12 +21,13 @@ namespace CPSC_481_Trailexplorers
     /// </summary>
     public partial class HikeListPage : UserControl
     {
+        private String searchTextvalue = "";        
 
         public HikeListPage()
         {
             InitializeComponent();
             test();
-           
+
         }
 
         private void Back_MouseDown(object sender, MouseEventArgs e)
@@ -35,7 +37,15 @@ namespace CPSC_481_Trailexplorers
 
         private void test()
         {
-            hikeListView.Children.Clear();
+            //if (hikeListView == null)
+            //{
+
+            //}
+            //else
+            //{
+                hikeListView.Children.Clear();
+            //}
+           
             List<HikeItem> hikeList;
 
             HikeItem hikeitem = new HikeItem();
@@ -50,18 +60,14 @@ namespace CPSC_481_Trailexplorers
             {
                 hikeListView.Children.Add(item);
             }
+
         }
 
-        public void SearchBoxInput_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void searchBoxInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-         
-
-
-
-
-
-
-
-    }
+            searchTextvalue = searchBoxInput.Text;
+            System.Diagnostics.Debug.WriteLine(searchTextvalue);
+            //    test();
+        }
     }
 }
