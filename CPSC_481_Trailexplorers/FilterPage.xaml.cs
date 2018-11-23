@@ -46,10 +46,14 @@ namespace CPSC_481_Trailexplorers
         private void Apply_Filter_Button(object sender, RoutedEventArgs e)
         {
 
-            if(Check_Location() && Check_Radio() && Check_Slider())
-            {
+            //if(Check_Location() && Check_Radio() && Check_Slider())
+            //{
                 Segue.Switch(new HikeListPage());
-            }
+            //}
+            //else
+            //{
+            //    filterResults.Clear();
+            //}
 
             
         }
@@ -65,6 +69,8 @@ namespace CPSC_481_Trailexplorers
             {
                 return false;
             }
+
+          
             filterResults.Add("province", dropDownProv.Text);
             filterResults.Add("park", dropDownPark.Text);
             return true;

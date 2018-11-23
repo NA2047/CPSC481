@@ -61,6 +61,9 @@
     <Compile Include="GuidePage.xaml.cs">
       <DependentUpon>GuidePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HikeItem.xaml.cs">
+      <DependentUpon>HikeItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HikeListPage.xaml.cs">
       <DependentUpon>HikeListPage.xaml</DependentUpon>
     </Compile>
@@ -70,12 +73,17 @@
     <Compile Include="LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MarginSetter.cs" />
     <Compile Include="Segue.cs" />
     <Page Include="FilterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GuidePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HikeItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

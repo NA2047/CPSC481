@@ -74,7 +74,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Label x:Name="timeValueLabel" Content="0" Margin="208,481,208,0" VerticalAlignment="Top" RenderTransformOrigin="3.148,0.68"/>
+        <Label x:Name="timeValueLabel" Content="0" Margin="208,481,199,0" VerticalAlignment="Top" RenderTransformOrigin="3.148,0.68" FontSize="14"/>
         <Label  x:Name="elevationLabel" Content="Elevation 1000ft" Margin="140,499,134,235" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
         <Slider x:Name="sliderElevation" ValueChanged="SliderElevation_ValueChanged" Margin="80,538,80,205" RenderTransformOrigin="-0.069,0.143" TickFrequency=".5" Maximum="10" Minimum="0" TickPlacement="BottomRight"  IsSnapToTickEnabled="True">
             <Slider.Effect>
@@ -89,7 +89,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Label x:Name="elevationValueLabel" Content="0" Margin="208,565,208,0" VerticalAlignment="Top"/>
+        <Label x:Name="elevationValueLabel" Content="0" Margin="208,565,208,0" VerticalAlignment="Top" FontSize="14"/>
 
         <Label  x:Name="distanceLabel" Content="Distance" Margin="171,591,171,143" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
         <Slider x:Name="sliderDistance" ValueChanged="SliderDistance_ValueChanged" Margin="80,630,80,113" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight" IsSnapToTickEnabled="True">
@@ -105,12 +105,12 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Button x:Name="filterButton" Content="Apply" Margin="153,704,148,29" Click="Apply_Filter_Button" FontSize="18" Background="Azure">
+        <Button x:Name="filterButton" Content="Apply" Margin="151,711,150,30" Click="Apply_Filter_Button" FontSize="18" Background="Azure">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="distanceValueLabel" Content="0" Margin="208,655,208,0" VerticalAlignment="Top"/>
+        <Label x:Name="distanceValueLabel" Content="0" Margin="208,655,208,0" FontSize="14" VerticalAlignment="Top"/>
 
 
 
