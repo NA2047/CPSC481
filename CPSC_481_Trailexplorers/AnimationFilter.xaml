@@ -7,14 +7,30 @@
              mc:Ignorable="d" d:DesignWidth="435" Height="150">
     <Grid Background="DeepSkyBlue">
         <Canvas Width="300"  Margin="67,0,67.667,0">
-            <Polygon x:Name="mountain" Height="150" Points="0,150 65,150 130,150"
-        Fill="Blue"
+            <Polygon x:Name="mountain" Height="150" Points="0,150 65,0 130,150"
+        Fill="SlateGray"
           Canvas.Left="90" Width="130"   >
                 <Polygon.Effect>
                     <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
                 </Polygon.Effect>
             </Polygon>
+            <Line x:Name="leftLine"
+            X1="0" Y1="150"
+            X2="65" Y2="0"
+            Stroke="SandyBrown"
+            StrokeThickness="4" Canvas.Left="90" />
+            <Line x:Name="rightLine"
+            X1="65" Y1="0"
+            X2="130" Y2="150"
+            Stroke="SandyBrown"
+            StrokeThickness="4" Canvas.Left="90" />
 
+
+            <Ellipse x:Name="sun" Height="53" Fill="LightGoldenrodYellow" Canvas.Left="-65" Canvas.Top="151" Width="53" StrokeThickness="3">
+                <Ellipse.Effect>
+                    <BlurEffect RenderingBias="Quality" Radius="10"/>
+                </Ellipse.Effect>
+            </Ellipse>
         </Canvas>
 
     </Grid>
