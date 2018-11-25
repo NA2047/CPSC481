@@ -116,8 +116,15 @@
       Fill="DarkSlateGray"  
       Stretch="Fill"  
  
-      StrokeThickness="2" Margin="357,549,22,219" />
-            <local:CircleGrow x:Name="timeAnimationFill" Margin="357,412,14,300" ProgressValue="100" >
+      StrokeThickness="2" Margin="357,549,22,219" >
+            <Polygon.Effect>
+                <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
+            </Polygon.Effect>
+        </Polygon>
+        <local:CircleGrow x:Name="timeAnimationFill" Margin="357,412,14,300" ProgressValue="100" >
+            <local:CircleGrow.Effect>
+                <DropShadowEffect/>
+            </local:CircleGrow.Effect>
 
         </local:CircleGrow>
 

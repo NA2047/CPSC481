@@ -34,13 +34,13 @@ namespace CPSC_481_Trailexplorers
                 {
 
                     underBarCirle.Stroke = Brushes.Red;
-                    underBarCirle.StrokeThickness = 2.5;
+                    underBarCirle.StrokeThickness = 3;
 
                 }
                 else
                 {
                     underBarCirle.Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF89CE25"));
-                    underBarCirle.StrokeThickness = 2.5;
+                    underBarCirle.StrokeThickness = 3;
                 }
                 SetValue(ProgressValueProperty, value);
             }
