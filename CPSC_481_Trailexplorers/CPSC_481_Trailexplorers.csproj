@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CircleGrow.xaml.cs">
+      <DependentUpon>CircleGrow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FilterPage.xaml.cs">
       <DependentUpon>FilterPage.xaml</DependentUpon>
     </Compile>
@@ -70,11 +75,18 @@
     <Compile Include="HikeProfilePage.xaml.cs">
       <DependentUpon>HikeProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="lineGrow.xaml.cs">
+      <DependentUpon>lineGrow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MarginSetter.cs" />
     <Compile Include="Segue.cs" />
+    <Page Include="CircleGrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FilterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HikeProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="lineGrow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

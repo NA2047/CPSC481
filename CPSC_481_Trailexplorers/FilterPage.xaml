@@ -89,7 +89,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Label x:Name="elevationValueLabel" Content="0" Margin="208,565,208,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="elevationValueLabel" Content="0" Margin="208,565,199,0" VerticalAlignment="Top" FontSize="14"/>
 
         <Label  x:Name="distanceLabel" Content="Distance" Margin="171,591,171,143" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
         <Slider x:Name="sliderDistance" ValueChanged="SliderDistance_ValueChanged" Margin="80,630,80,113" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight" IsSnapToTickEnabled="True">
@@ -105,13 +105,23 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Button x:Name="filterButton" Content="Apply" Margin="151,711,150,30" Click="Apply_Filter_Button" FontSize="18" Background="Azure">
+        <Button x:Name="filterButton" Content="Apply" Margin="148,684,153,0" Click="Apply_Filter_Button" FontSize="18" Background="Azure" Height="27" VerticalAlignment="Top">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="distanceValueLabel" Content="0" Margin="208,655,208,0" FontSize="14" VerticalAlignment="Top"/>
+        <Label x:Name="distanceValueLabel" Content="0" Margin="208,655,199,0" FontSize="14" Height="29" VerticalAlignment="Top"/>
+        <Polygon x:Name="elevationAnimationFill"  
+      Points="0,1 0.5,0 1,1"  
+      Fill="DarkSlateGray"  
+      Stretch="Fill"  
+ 
+      StrokeThickness="2" Margin="357,549,22,219" />
+            <local:CircleGrow x:Name="timeAnimationFill" Margin="357,412,14,300" ProgressValue="100" >
 
+        </local:CircleGrow>
+
+       
 
 
     </Grid>
