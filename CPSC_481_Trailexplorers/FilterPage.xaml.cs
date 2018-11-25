@@ -25,6 +25,7 @@ namespace CPSC_481_Trailexplorers
     {
 
         Hashtable filterResults = new Hashtable();
+        private double decOrInc = double.MaxValue;
 
         public FilterPage()
         {
@@ -52,30 +53,31 @@ namespace CPSC_481_Trailexplorers
 
             //if(Check_Location() && Check_Radio() && Check_Slider())
             //{
-                Segue.Switch(new HikeListPage());
+            Segue.Switch(new HikeListPage());
             //}
             //else
             //{
             //    filterResults.Clear();
             //}
 
-            
+
         }
 
-         /// <summary>
-         /// 
-         /// </summary>
-         /// <returns></returns>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private bool Check_Location()
         {
+
           
             if (string.IsNullOrEmpty(Province.Text) || string.IsNullOrEmpty(dropDownPark.Text))
+
             {
                 return false;
             }
 
-          
-            filterResults.Add("province", Province.Text);
+
             filterResults.Add("park", dropDownPark.Text);
             return true;
 
@@ -93,10 +95,10 @@ namespace CPSC_481_Trailexplorers
                 return false;
             }
             filterResults.Add("difficulty", checkedButton.Name);
-            
+
 
             return true;
-         
+
         }
         /// <summary>
         /// 
@@ -108,7 +110,7 @@ namespace CPSC_481_Trailexplorers
             Double sElevation = sliderElevation.Value;
             Double sDistance = sliderDistance.Value;
 
-            if(sTime == 0 || sElevation == 0 || sDistance == 0)
+            if (sTime == 0 || sElevation == 0 || sDistance == 0)
             {
                 return false;
             }
@@ -125,6 +127,17 @@ namespace CPSC_481_Trailexplorers
         private void SliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             timeValueLabel.Content = sliderTime.Value.ToString();
+            //if (sliderTime.Value == 10)
+            //{
+            //    timeAnimationFill.ProgressValue = 99.9999999999;
+            //}
+            //else
+            //{
+            timeAnimationFill.ProgressValue = sliderTime.Value * 10;
+
+            //}
+
+
         }
 
         private void SliderDistance_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -135,6 +148,21 @@ namespace CPSC_481_Trailexplorers
         private void SliderElevation_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             elevationValueLabel.Content = sliderElevation.Value.ToString();
+            
+            if (decOrInc < sliderElevation.Value && elevationAnimationFill.Margin.Top >= 440)
+            {
+                elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, elevationAnimationFill.Margin.Top - 4, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
+            }
+            else {
+                elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, elevationAnimationFill.Margin.Top + 4, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
+
+            }
+            if (sliderElevation.Value == 0)
+            {
+                decOrInc = double.MaxValue;
+                elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, 550.00, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
+            }
+            decOrInc = sliderElevation.Value;
         }
 
         private void dropDownPark_Loaded(object sender, RoutedEventArgs e)

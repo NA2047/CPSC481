@@ -26,8 +26,10 @@ namespace CPSC_481_Trailexplorers
             InitializeComponent();
             //initialize MainWindow to Login page by default
             Segue.pageSwitchWindow = this;
+
             Segue.Switch(new LoadingPage());
             //this.DataContext = new MWVM();
+
         }
 
         /// <summary>
