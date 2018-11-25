@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
 
+
+
 namespace CPSC_481_Trailexplorers
 {
     /// <summary>
@@ -27,6 +29,8 @@ namespace CPSC_481_Trailexplorers
         public FilterPage()
         {
             InitializeComponent();
+            this.DataContext = new MWVM();
+
         }
         /// <summary>
         /// Moves View back to GuidePage Screen
@@ -65,13 +69,13 @@ namespace CPSC_481_Trailexplorers
         private bool Check_Location()
         {
           
-            if (string.IsNullOrEmpty(dropDownProv.Text) || string.IsNullOrEmpty(dropDownPark.Text))
+            if (string.IsNullOrEmpty(Province.Text) || string.IsNullOrEmpty(dropDownPark.Text))
             {
                 return false;
             }
 
           
-            filterResults.Add("province", dropDownProv.Text);
+            filterResults.Add("province", Province.Text);
             filterResults.Add("park", dropDownPark.Text);
             return true;
 
@@ -131,6 +135,21 @@ namespace CPSC_481_Trailexplorers
         private void SliderElevation_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             elevationValueLabel.Content = sliderElevation.Value.ToString();
+        }
+
+        private void dropDownPark_Loaded(object sender, RoutedEventArgs e)
+        {
+              
+        }
+
+        private void Province_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void dropDownPark_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
