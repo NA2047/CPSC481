@@ -29,5 +29,25 @@ namespace CPSC_481_Trailexplorers
         {
             Segue.Switch(new HikeListPage());
         }
+
+        //private void WebBrowser_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    webMap.Navigate(new Uri("https://www.google.ca/maps"));
+        //    //WebBrowser.Navigating += OnNavigating;
+
+        //}
+        private void Home_Button(object sender, MouseEventArgs e)
+        {
+            Segue.Switch(new FilterPage());
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            GoogleMapPage googleMapPage = new GoogleMapPage();
+            googleMapPage.setHike(hikeName.Content.ToString());
+            Segue.Switch(googleMapPage);
+
+        }
     }
 }

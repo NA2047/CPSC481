@@ -20,7 +20,7 @@ namespace CPSC_481_Trailexplorers
     /// </summary>
     public partial class AnimationFilter : UserControl
     {
-        private enum Daytm: DateTime { 12 };
+        //private enum Daytm: DateTime { 12 };
 
         public AnimationFilter()
         {
