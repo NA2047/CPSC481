@@ -14,8 +14,26 @@ namespace CPSC_481_Trailexplorers
         {
             ProvinceCollection = new ObservableCollection<Province>();
             ParksCollection = new ObservableCollection<Park>();
+            DifficultyCollection = new ObservableCollection<Difficulty>();
             LoadData();
         }
+
+        public ObservableCollection<Difficulty> _DifficultyCollection;
+
+        public ObservableCollection<Difficulty> DifficultyCollection
+        {
+            get { return _DifficultyCollection; }
+            set
+            {
+                _DifficultyCollection = value;
+                NotifyPropertyChanged("DifficultyCollection");
+            }
+        }
+
+
+
+
+
         public ObservableCollection<Province> _ProvinceCollection;
 
         public ObservableCollection<Province> ProvinceCollection
@@ -48,7 +66,7 @@ namespace CPSC_481_Trailexplorers
             set
             {
                 _SelectedProvince = value;
-                if (_SelectedProvince != null && _SelectedProvince.Parks != null)
+                if (_SelectedProvince != null && _SelectedProvince.Parks != null && _SelectedProvince.DifficultyCollection !=null)
                 {
                     ParksCollection = new ObservableCollection<Park>(_SelectedProvince.Parks);
                 }
@@ -56,7 +74,7 @@ namespace CPSC_481_Trailexplorers
             }
         }
         public void LoadData()
-        {
+        { 
             if (ProvinceCollection != null)
             {
                 ProvinceCollection.Add(new Province

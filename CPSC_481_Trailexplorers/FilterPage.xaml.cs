@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
-
+using System.Drawing;
 
 
 namespace CPSC_481_Trailexplorers
@@ -48,9 +48,10 @@ namespace CPSC_481_Trailexplorers
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Apply_Filter_Button(object sender, RoutedEventArgs e)
+        public void Apply_Filter_Button(object sender, RoutedEventArgs e)
         {
-
+            SaveSettings();
+            GetSettings();
             //if(Check_Location() && Check_Radio() && Check_Slider())
             //{
             Segue.Switch(new HikeListPage());
@@ -86,7 +87,7 @@ namespace CPSC_481_Trailexplorers
         /// 
         /// </summary>
         /// <returns></returns>
-        private bool Check_Radio()
+        public bool Check_Radio()
         {
 
             var checkedButton = containerRadio.Children.OfType<RadioButton>().FirstOrDefault(r => (bool)r.IsChecked);
@@ -179,5 +180,64 @@ namespace CPSC_481_Trailexplorers
         {
 
         }
+
+        string easyCheck; 
+        public void GetSettings()
+        {
+            //!if (easyRadio.IsChecked == true) easyCheck = easyRadio.Content.ToString();
+            easyRadio.IsChecked= Properties.Settings.Default.Radio1;
+            mediumRadio.IsChecked = Properties.Settings.Default.Radio2;
+            hardRadio.IsChecked = Properties.Settings.Default.Radio3;
+
+            Province.Text = Properties.Settings.Default.Province;
+            dropDownPark.Text = Properties.Settings.Default.Park;
+            
+
+            
+        }
+
+        public void SaveSettings()
+        {
+            Properties.Settings.Default.Province = Province.Text;
+            Properties.Settings.Default.Park = dropDownPark.Text;
+
+            Properties.Settings.Default.Radio1 = easyRadio.IsChecked ?? false;
+            Properties.Settings.Default.Radio2 = mediumRadio.IsChecked ?? false;
+            Properties.Settings.Default.Radio3 = hardRadio.IsChecked ?? false;
+
+            Properties.Settings.Default.Save();
+        }
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+            GetSettings();
+
+        }
+
+        private void easyRadio_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mediumRadio_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void hardRadio_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void easyRadio_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
+ 

@@ -11,5 +11,6 @@ namespace CPSC_481_Trailexplorers
         public string ProvinceName { get; set; }
         public int ProvinceId { get; set; }
         public List<Park> Parks{ get; set; }
+        public List<Difficulty> DifficultyCollection { get; set; }
     }
 }

@@ -78,6 +78,7 @@
     <Compile Include="CircleGrow.xaml.cs">
       <DependentUpon>CircleGrow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class2.cs" />
     <Compile Include="FilterPage.xaml.cs">
       <DependentUpon>FilterPage.xaml</DependentUpon>
     </Compile>

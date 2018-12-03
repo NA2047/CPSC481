@@ -3,25 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      
              xmlns:local="clr-namespace:CPSC_481_Trailexplorers"
+             
              mc:Ignorable="d" 
              Height="768" Width="432"
-            >
-    <Grid Background="White">
+            
+    >
+    <Grid Background="White" Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="139*"/>
+        </Grid.RowDefinitions>
         <Grid.Effect>
             <DropShadowEffect/>
         </Grid.Effect>
         <Image x:Name="logoImage" Canvas.ZIndex="3" 
-               Source="Logos/logoWBold.png" RenderOptions.BitmapScalingMode="Fant" Opacity="1" Margin="108,0,108,570" Stretch="UniformToFill"/>
+               Source="Logos/logoWBold.png" RenderOptions.BitmapScalingMode="Fant" Opacity="1" Margin="108,0,108,152.655" Stretch="UniformToFill"/>
         <Image x:Name="backArrowTop" HorizontalAlignment="Left" Height="46" Margin="0,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/backArrow.png" MouseDown="Back_MouseDown"/>
-        <Image x:Name="backGroundTop" HorizontalAlignment="Left" Margin="0,53,0,559" Width="432" Source="Backgroundimages/trail.png" Stretch="UniformToFill" >
+        <Image x:Name="backGroundTop" HorizontalAlignment="Left"  Margin="0,53,0,141.655" Width="432" Source="Backgroundimages/trail.png" Stretch="UniformToFill" >
             <Image.Effect>
                 <BlurEffect/>
             </Image.Effect>
         </Image>
-        <Label x:Name="pleaseFill" Content="Please fill the following items" Margin="108,214,108,517" FontSize="16"/>
-        <Label  x:Name="locationLablel" Content="Hike Location" Margin="153,255,153,479" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
-        <ComboBox x:Name="Province" ItemsSource="{Binding ProvinceCollection}" SelectedItem="{Binding SelectedProvince}" DisplayMemberPath="ProvinceName" IsEditable="True" Margin="40,294,229,0" Height="31" IsDropDownOpen="True" IsReadOnly="False" VerticalAlignment="Top" >
+        <Label x:Name="pleaseFill" Content="Please fill the following items" Margin="108,214,108,99.655" FontSize="16"/>
+        <Label  x:Name="locationLablel" Content="Hike Location" Margin="153,255,153,61.655" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
+
+        <ComboBox x:Name="Province" ItemsSource="{Binding ProvinceCollection}" SelectedItem="{Binding SelectedProvince}" DisplayMemberPath="ProvinceName" IsEditable="True" Margin="40,294,229,0" Height="31" IsDropDownOpen="False" IsReadOnly="False" VerticalAlignment="Top" >
             <!--<ComboBoxItem Content="ALBERTA"/>
             <ComboBoxItem Content="BRITISH COLUMBIA"/>
             <ComboBoxItem Content="MANITOBA"/>
@@ -36,7 +44,7 @@
             <ComboBoxItem Content="NUNAVUT"/>
             <ComboBoxItem Content="YUKON"/>-->
         </ComboBox>
-        <ComboBox x:Name="dropDownPark" ItemsSource="{Binding SelectedProvince.Parks}" DisplayMemberPath="ParkName" IsEditable="True" Margin="233,294,36,0" Height="31" Background="Black" VerticalAlignment="Top" Loaded="dropDownPark_Loaded" >
+        <ComboBox x:Name="dropDownPark" ItemsSource="{Binding SelectedProvince.Parks}"  DisplayMemberPath="ParkName" IsEditable="True" Margin="233,294,36,0" Height="31" Background="Black" VerticalAlignment="Top" Loaded="dropDownPark_Loaded" SelectionChanged="dropDownPark_SelectionChanged" >
             <!--<ComboBoxItem Content="A"/>
             <ComboBoxItem Content="B"/>
             <ComboBoxItem Content="M"/>
@@ -52,16 +60,16 @@
             <ComboBoxItem Content="Y"/>-->
         </ComboBox>
 
-        <Label  x:Name="difficultyLabel" Content="Difficulty" Margin="171,331,171,403" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
-        <StackPanel x:Name="containerRadio" Margin="0,365,0,0" VerticalAlignment="Top" Orientation="Horizontal">
-            <RadioButton  x:Name="easyRadio" Content="Easy"   FontSize="16" Margin="50,10,10,10"/>
-            <RadioButton  x:Name="mediumRadio" Content="Medium"  FontSize="16" Margin="70,10,10,10"/>
-            <RadioButton  x:Name="hardRadio" Content="Hard"  FontSize="16" Margin="70,10,50,10"/>
+        <Label  x:Name="difficultyLabel" Content="Difficulty" Margin="171,331,171,403" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.RowSpan="2"/>
+        <StackPanel x:Name="containerRadio" DataContext="StaticResource Settings" Margin="0,14.345,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="1" >
+            <RadioButton  x:Name="easyRadio" GroupName="EMH" Content="Easy"   FontSize="16" Margin="50,10,10,10" />
+            <RadioButton  x:Name="mediumRadio" GroupName="EMH" Content="Medium"   FontSize="16" Margin="70,10,10,10" />
+            <RadioButton  x:Name="hardRadio" GroupName="EMH" Content="Hard"   FontSize="16" Margin="70,10,50,10" />
         </StackPanel>
 
-        <Label  x:Name="timeLablel" Content="Time (Hr)" Margin="171,412,171,322" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
+        <Label  x:Name="timeLablel" Content="Time (Hr)" Margin="171,61.345,171,322" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
 
-        <Slider x:Name="sliderTime" ValueChanged="SliderTime_ValueChanged" Margin="80,456,80,287" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight"  IsSnapToTickEnabled="True">
+        <Slider x:Name="sliderTime" ValueChanged="SliderTime_ValueChanged" Margin="80,105.345,80,287" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>
@@ -74,9 +82,9 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Label x:Name="timeValueLabel" Content="0" Margin="208,481,199,0" VerticalAlignment="Top" RenderTransformOrigin="3.148,0.68" FontSize="14"/>
-        <Label  x:Name="elevationLabel" Content="Elevation 1000ft" Margin="140,499,134,235" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
-        <Slider x:Name="sliderElevation" ValueChanged="SliderElevation_ValueChanged" Margin="80,538,80,205" RenderTransformOrigin="-0.069,0.143" TickFrequency=".5" Maximum="10" Minimum="0" TickPlacement="BottomRight"  IsSnapToTickEnabled="True">
+        <Label x:Name="timeValueLabel" Content="0" Margin="208,130.345,199,0" VerticalAlignment="Top" RenderTransformOrigin="3.148,0.68" FontSize="14" Grid.Row="1"/>
+        <Label  x:Name="elevationLabel" Content="Elevation 1000ft" Margin="140,148.345,134,235" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
+        <Slider x:Name="sliderElevation" ValueChanged="SliderElevation_ValueChanged" Margin="80,187.345,80,205" RenderTransformOrigin="-0.069,0.143" TickFrequency=".5" Maximum="10" Minimum="0" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>
@@ -89,10 +97,10 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Label x:Name="elevationValueLabel" Content="0" Margin="208,565,199,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="elevationValueLabel" Content="0" Margin="208,214.345,199,0" VerticalAlignment="Top" FontSize="14" Grid.Row="1"/>
 
-        <Label  x:Name="distanceLabel" Content="Distance" Margin="171,591,171,143" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
-        <Slider x:Name="sliderDistance" ValueChanged="SliderDistance_ValueChanged" Margin="80,630,80,113" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight" IsSnapToTickEnabled="True">
+        <Label  x:Name="distanceLabel" Content="Distance" Margin="171,240.345,171,143" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
+        <Slider x:Name="sliderDistance" ValueChanged="SliderDistance_ValueChanged" Margin="80,279.345,80,113" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>
@@ -105,30 +113,30 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Button x:Name="filterButton" Content="Apply" Margin="148,684,153,0" Click="Apply_Filter_Button" FontSize="18" Background="Azure" Height="27" VerticalAlignment="Top">
+        <Button x:Name="filterButton" Content="Apply" Margin="148,333.345,153,0" Click="Apply_Filter_Button" FontSize="18" Background="Azure" Height="27" VerticalAlignment="Top" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="distanceValueLabel" Content="0" Margin="208,655,199,0" FontSize="14" Height="29" VerticalAlignment="Top"/>
+        <Label x:Name="distanceValueLabel" Content="0" Margin="208,304.345,199,0" FontSize="14" Height="29" VerticalAlignment="Top" Grid.Row="1"/>
         <Polygon x:Name="elevationAnimationFill"  
       Points="0,1 0.5,0 1,1"  
       Fill="DarkSlateGray"  
       Stretch="Fill"  
  
-      StrokeThickness="2" Margin="357,549,22,219" >
+      StrokeThickness="2" Margin="357,198.345,22,219" Grid.Row="1" >
             <Polygon.Effect>
                 <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
             </Polygon.Effect>
         </Polygon>
-        <local:CircleGrow x:Name="timeAnimationFill" Margin="357,412,14,300" ProgressValue="100" >
+        <local:CircleGrow x:Name="timeAnimationFill" Margin="368,69.345,24,308" ProgressValue="100" Grid.Row="1" >
             <local:CircleGrow.Effect>
                 <DropShadowEffect/>
             </local:CircleGrow.Effect>
 
         </local:CircleGrow>
 
-       
+
 
 
     </Grid>
