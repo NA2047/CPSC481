@@ -30,7 +30,7 @@ namespace CPSC_481_Trailexplorers
 
         private void WebBrowser_Loaded(object sender, RoutedEventArgs e)
         {
-            googleMaps.Navigate(new Uri(query,true));
+            googleMaps.Navigate(new Uri(query));
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
