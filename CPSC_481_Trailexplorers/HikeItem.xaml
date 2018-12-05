@@ -16,7 +16,7 @@
             <Viewbox.Effect>
                 <BlurEffect/>
             </Viewbox.Effect>
-            <Image Canvas.ZIndex="1" x:Name="background" Source="BackgroundImages/trail.png" Width="3553" Height="512" Stretch="UniformToFill" />
+            <Image Canvas.ZIndex="1" x:Name="background" Source="BackgroundImages/trail.png" Width="3553" Height="512" Stretch="UniformToFill" MouseDown="Background_MouseDown"/>
         </Viewbox>
     </Grid>
 </UserControl>

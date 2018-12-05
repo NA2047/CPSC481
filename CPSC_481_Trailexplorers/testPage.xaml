@@ -11,6 +11,7 @@
 
         </local:AnimationFilter>
         <Slider  ValueChanged="Slider_ValueChanged"  Maximum="150" TickFrequency="1"  TickPlacement="BottomRight"  IsSnapToTickEnabled="True" HorizontalAlignment="Left" Margin="33,292,0,0" VerticalAlignment="Top" Width="259"/>
+        <Slider HorizontalAlignment="Left" Maximum="65" TickFrequency="1"  Margin="33,321,0,0" VerticalAlignment="Top" Height="36" Width="216" ValueChanged="Slider_ValueChanged_1"/>
 
     </Grid>
 </UserControl>

@@ -33,6 +33,17 @@ namespace CPSC_481_Trailexplorers
             set
             {
                 SetValue(ProgressValueProperty, value);
+                ChangeLine();
+            }
+        }
+
+        public double MountainValueElevation
+        {
+            get { return (double)GetValue(eProgressValueProperty); }
+            set
+            {
+                SetValue(eProgressValueProperty, value);
+                ChangeLine();
             }
         }
 
@@ -40,8 +51,21 @@ namespace CPSC_481_Trailexplorers
         public static readonly DependencyProperty ProgressValueProperty =
             DependencyProperty.Register("MountainValue", typeof(double), typeof(AnimationFilter), new PropertyMetadata(0.0, OnProgressValueChanged));
 
-         
-    
+        public static readonly DependencyProperty eProgressValueProperty =
+            DependencyProperty.Register("1MountainValue", typeof(double), typeof(AnimationFilter), new PropertyMetadata(0.0, EOnProgressValueChanged));
+
+        private static void EOnProgressValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            AnimationFilter pathGrow = d as AnimationFilter;
+            double slople = 2.3;
+            double temp = 150 - (slople * (double)e.NewValue);
+            System.Diagnostics.Debug.WriteLine(e.NewValue.ToString());
+            System.Diagnostics.Debug.WriteLine(temp);
+            pathGrow.mountain1.Points[1] = new Point((double)e.NewValue, temp);
+            pathGrow.mountain1.Points[2] = new Point(130 -(double)e.NewValue, temp);
+            //pathGrow.mountain1.Points[2] = new Point(0, (double)e.NewValue);
+
+        }
 
         private static void OnProgressValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -59,7 +83,8 @@ namespace CPSC_481_Trailexplorers
 
 
             pathGrow.mountain.Points[1] =  new Point(65, (double)e.NewValue);
-         
+
+            
           
            
 
@@ -78,9 +103,22 @@ namespace CPSC_481_Trailexplorers
 
         }
 
+       
+
         private void PlaceSun()
         {
             var time = DateTime.Now.TimeOfDay;
+
+        }
+
+
+        public void ChangeLine()
+        {
+            double slople = 1.73;
+
+
+
+
 
         }
     }

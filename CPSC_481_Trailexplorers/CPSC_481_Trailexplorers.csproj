@@ -78,8 +78,12 @@
     <Compile Include="CircleGrow.xaml.cs">
       <DependentUpon>CircleGrow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class2.cs" />
     <Compile Include="FilterPage.xaml.cs">
       <DependentUpon>FilterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GoogleMapPage.xaml.cs">
+      <DependentUpon>GoogleMapPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="GuidePage.xaml.cs">
       <DependentUpon>GuidePage.xaml</DependentUpon>
@@ -117,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GoogleMapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,6 +227,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HikeImages\cLake.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\homeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logos\googleMapLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
