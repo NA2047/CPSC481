@@ -8,6 +8,33 @@
              Height="768" Width="432">
     <Grid Background="White">
         <Image HorizontalAlignment="Left" Height="46" Margin="0,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/backArrow.png" MouseDown="Back_MouseDown"/>
+        <Image x:Name="hikeImage" HorizontalAlignment="Left" Source="HikeImages/cLake.jpg" Height="259" Margin="39,120,0,0" VerticalAlignment="Top" Width="359" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
+        <Label x:Name="hikeName" Content="Chester Lake" HorizontalAlignment="Left" Margin="110,53,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label x:Name="hikeTime" Content="Time" HorizontalAlignment="Left" Margin="39,414,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="hikeDistance" Content="Distance" HorizontalAlignment="Left" Margin="39,482,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="hikeElevation" Content="Elevation" HorizontalAlignment="Left" Margin="39,516,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="hikeSeason" Content="Season" HorizontalAlignment="Left" Margin="39,448,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="hikeDifficulty" Content="Difficulty" HorizontalAlignment="Left" Margin="38,550,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.732,-1.118" FontSize="18"/>
+        <Label x:Name="hikeTimeValue" Content="4Hr" HorizontalAlignment="Left" Margin="141,414,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="hikeDistanceValue" Content="310 m" HorizontalAlignment="Left" Margin="141,482,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="hikeElevationValue" Content="400 m" HorizontalAlignment="Left" Margin="141,516,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="hikeSeasonValue" Content="Fall" HorizontalAlignment="Left" Margin="141,448,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="hikeDifficultyValue" Content="Easy" HorizontalAlignment="Left" Margin="140,550,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.732,-1.118" FontSize="18"/>
+        <!-- <WebBrowser x:Name="webMap" Height="196" Margin="222,414,14,0" VerticalAlignment="Top" Loaded="WebBrowser_Loaded" /> -->
+        <Label x:Name="descriptionLabel" Content="Description" HorizontalAlignment="Left" Margin="17,601,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <ScrollViewer x:Name="hikeDescriptionScroll" HorizontalAlignment="Left" Margin="17,639,0,29" Width="381">
+            <TextBlock x:Name="hikeDescriptionValue" TextWrapping="Wrap"><Span Foreground="Black"><Run Text="Hikers, cross country skiers and snowshoers unite! "/></Span><LineBreak/><Span Foreground="Black"><Run Text="Chester Lake is a year-round trail that meanders through "/></Span><LineBreak/><Run Text="forests and meadows leading to the emerald waters of Chester Lake itself. Most of the elevation gain is towards the beginning of the hike before the trail levels off and leads you through beautiful meadows to the lake."/><Run Text="ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdgdfgdfgdfgdfgdfgdfgdfgdfg"/><LineBreak/><Run/></TextBlock>
+        </ScrollViewer>
+        <Image HorizontalAlignment="Left" Height="46" Margin="372,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/homeIcon.png" MouseDown="Home_Button"/>
+        <Image HorizontalAlignment="Left" Height="177" Margin="221,414,0,0" VerticalAlignment="Top" Width="177" Source="Logos/googleMapLogo.png" MouseDown="Image_MouseDown">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
 
     </Grid>
 </UserControl>

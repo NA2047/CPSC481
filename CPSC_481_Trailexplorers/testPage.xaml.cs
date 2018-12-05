@@ -40,5 +40,11 @@ namespace CPSC_481_Trailexplorers
 
 
         }
+
+        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Slider Slider1 = (Slider)sender;
+            poop.MountainValueElevation = Slider1.Value;
+        }
     }
 }

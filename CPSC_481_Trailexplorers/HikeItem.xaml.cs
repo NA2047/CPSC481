@@ -24,5 +24,10 @@ namespace CPSC_481_Trailexplorers
         {
             InitializeComponent();
         }
+
+        private void Background_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Segue.Switch(new HikeProfilePage());
+        }
     }
 }

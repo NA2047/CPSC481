@@ -60,11 +60,13 @@
             <ComboBoxItem Content="Y"/>-->
         </ComboBox>
 
+
         <Label  x:Name="difficultyLabel" Content="Difficulty" Margin="171,331,171,403" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.RowSpan="2"/>
         <StackPanel x:Name="containerRadio" DataContext="StaticResource Settings" Margin="0,14.345,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="1" >
             <RadioButton  x:Name="easyRadio" GroupName="EMH" Content="Easy"   FontSize="16" Margin="50,10,10,10" />
             <RadioButton  x:Name="mediumRadio" GroupName="EMH" Content="Medium"   FontSize="16" Margin="70,10,10,10" />
             <RadioButton  x:Name="hardRadio" GroupName="EMH" Content="Hard"   FontSize="16" Margin="70,10,50,10" />
+
         </StackPanel>
 
         <Label  x:Name="timeLablel" Content="Time (Hr)" Margin="171,61.345,171,322" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
