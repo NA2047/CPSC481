@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
+using System.Xaml;
+
 
 namespace CPSC_481_Trailexplorers
 {
@@ -27,7 +29,7 @@ namespace CPSC_481_Trailexplorers
             //initialize MainWindow to Login page by default
             Segue.pageSwitchWindow = this;
 
-            Segue.Switch(new GuidePage());
+            Segue.Switch(new LoadingPage());
             //this.DataContext = new MWVM();
 
         }

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
 using System.Drawing;
+using System.Xaml;
 
 
 namespace CPSC_481_Trailexplorers
