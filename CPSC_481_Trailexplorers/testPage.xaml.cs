@@ -46,5 +46,30 @@ namespace CPSC_481_Trailexplorers
             Slider Slider1 = (Slider)sender;
             poop.MountainValueElevation = Slider1.Value;
         }
+
+        private void Slider_ValueChanged_2(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Slider Slider1 = (Slider)sender;
+
+            //double DaySacle = poop.timeInt / 24.0;
+            //double slideScale = 
+            System.Diagnostics.Debug.WriteLine(poop.darken.Opacity);
+
+            if (poop.DarkenUporDownP > Slider1.Value)
+            {
+                //going down
+                poop.darken.Opacity = (Slider1.Value / 24);
+                poop.DarkenUporDownP = Slider1.Value;
+            }
+            else
+            {
+                //going up 
+                poop.darken.Opacity = (Slider1.Value / 24);
+                poop.DarkenUporDownP = Slider1.Value;
+            }
+     
+
+           
+        }
     }
 }

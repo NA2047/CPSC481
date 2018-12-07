@@ -15,7 +15,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="HelpMe" Click="Help_Filter" Canvas.ZIndex="2" Content="Help" HorizontalAlignment="Left" Margin="31,429,0,0" VerticalAlignment="Top" Width="370" Height="95" FontSize="25">
+        <Button x:Name="HelpMe" Click="Help_Filter"  Content="Help" HorizontalAlignment="Left" Margin="31,429,0,0" VerticalAlignment="Top" Width="370" Height="95" FontSize="25">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

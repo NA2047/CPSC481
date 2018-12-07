@@ -5,22 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC_481_Trailexplorers"
              mc:Ignorable="d" d:DesignWidth="435" Height="150">
-    <Grid Background="DeepSkyBlue">
+    <Grid x:Name="sky" Background="DeepSkyBlue">
         <Canvas Width="300"  Margin="67,0,67.667,0">
-            <Polygon x:Name="mountain" Height="150" Points="0,150 65,0 130,150"
+            <Polygon  Canvas.ZIndex="1" x:Name="mountain" Height="150" Points="0,150 65,0 130,150"
         Fill="SlateGray"
           Canvas.Left="90" Width="130"   >
                 <Polygon.Effect>
                     <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
                 </Polygon.Effect>
             </Polygon>
-            <Polygon x:Name="mountain1" Height="150" Points="0,150 0,150 130,150 130,150"
+            <Polygon Canvas.ZIndex="3" x:Name="mountain1" Height="150" Points="0,150 65,0 130,150"
         Fill="Purple"
           Canvas.Left="90" Width="130"   >
                 <Polygon.Effect>
                     <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
                 </Polygon.Effect>
             </Polygon>
+            <Rectangle  x:Name="darken"  Fill="Black" Opacity="0" Height="150" Width="437" Canvas.Left="-68"/>
+            <Image x:Name="path" Canvas.ZIndex="2" Source="Assets/path.png" Height="150" Canvas.Left="105" Width="100" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <!--<Line x:Name="leftLine"
             X1="0" Y1="150"
@@ -30,13 +32,10 @@
             X1="65" Y1="0"
             X2="130" Y2="150"
             Stroke="SandyBrown"
-            StrokeThickness="4" Canvas.Left="90" />--> 
-            <Ellipse x:Name="sun" Height="53" Fill="LightGoldenrodYellow" Canvas.Left="-65" Canvas.Top="151" Width="53" StrokeThickness="3">
-                <Ellipse.Effect>
-                    <BlurEffect RenderingBias="Quality" Radius="10"/>
-                </Ellipse.Effect>
-            </Ellipse>
+            StrokeThickness="4" Canvas.Left="90" />-->
+
         </Canvas>
+
 
     </Grid>
 </UserControl>
