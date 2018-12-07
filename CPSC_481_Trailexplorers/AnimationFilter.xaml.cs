@@ -102,11 +102,12 @@ namespace CPSC_481_Trailexplorers
             }
 
             double temp = 150 - (slope * (double)e.NewValue);
-            System.Diagnostics.Debug.WriteLine(e.NewValue.ToString());
-            System.Diagnostics.Debug.WriteLine(temp);
+            //System.Diagnostics.Debug.WriteLine(e.NewValue.ToString());
+            //System.Diagnostics.Debug.WriteLine(temp);
             pathGrow.mountain1.Points[0] = new System.Windows.Point((double)e.NewValue, temp);
             pathGrow.mountain1.Points[1] = new System.Windows.Point(pathGrow.mountain.Points[1].X, pathGrow.mountain.Points[1].Y);
             pathGrow.mountain1.Points[2] = new System.Windows.Point(130 -(double)e.NewValue, temp);
+            pathGrow.mountain1.Opacity = 1.0;
             //pathGrow.mountain1.Points[2] = new Point(0, (double)e.NewValue);
 
         }
@@ -124,20 +125,27 @@ namespace CPSC_481_Trailexplorers
 
             //System.Diagnostics.Debug.WriteLine(Slider1.Value);
             //System.Diagnostics.Debug.WriteLine(poop.mountain.Points[1].Y);
+            //double slope = (pathGrow.mountain.Points[1].Y - pathGrow.mountain.Points[0].Y) / (pathGrow.mountain.Points[1].X - pathGrow.mountain.Points[0].X);
+            //if (slope < 0)
+            //{
+            //    slope *= -1;
+            //}
 
-            double slope = (pathGrow.mountain.Points[1].Y - pathGrow.mountain.Points[0].Y) / (pathGrow.mountain.Points[1].X - pathGrow.mountain.Points[0].X);
-            if (slope < 0)
-            {
-                slope *= -1;
-            }
-
+            pathGrow.mountain1.Opacity = 0.0;
+            //double XOffset0 = pathGrow.mountain1.Points[0].Y / slope;
+            //double XOffset2 = pathGrow.mountain1.Points[2].Y / slope;
+            //System.Diagnostics.Debug.WriteLine(XOffset0);
+            //System.Diagnostics.Debug.WriteLine(XOffset2);
+            //System.Diagnostics.Debug.WriteLine("dadadad");
+            //double temp = 150 - (slope * pathGrow.mountain1.Points[1].Y);
             pathGrow.mountain.Points[1] =  new System.Windows.Point(65, (double)e.NewValue);
-            double temp = 150 - (slope * (double)e.NewValue);
-            System.Diagnostics.Debug.WriteLine(e.NewValue.ToString());
-            System.Diagnostics.Debug.WriteLine(temp);
-            pathGrow.mountain1.Points[0] = new System.Windows.Point((double)e.NewValue, temp);
-            pathGrow.mountain1.Points[1] = new System.Windows.Point(pathGrow.mountain.Points[1].X, pathGrow.mountain.Points[1].Y);
-            pathGrow.mountain1.Points[2] = new System.Windows.Point(130 - (double)e.NewValue, temp);
+            pathGrow.mountain1.Points[1] = new System.Windows.Point(65, (double)e.NewValue);
+            //pathGrow.mountain1.Points[0] = new System.Windows.Point(XOffset0, pathGrow.mountain1.Points[0].Y);
+            //pathGrow.mountain1.Points[2] = new System.Windows.Point(XOffset2, pathGrow.mountain1.Points[2].Y);
+            ChangeLine();
+
+
+            //pathGrow.mountain1.Points[2] = new System.Windows.Point(130 - (double)e.NewValue, temp);
 
 
 
@@ -167,7 +175,7 @@ namespace CPSC_481_Trailexplorers
         }
 
 
-        public void ChangeLine()
+        public  static void ChangeLine()
         {
            
 
