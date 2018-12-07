@@ -107,7 +107,13 @@ namespace CPSC_481_Trailexplorers
             pathGrow.mountain1.Points[0] = new System.Windows.Point((double)e.NewValue, temp);
             pathGrow.mountain1.Points[1] = new System.Windows.Point(pathGrow.mountain.Points[1].X, pathGrow.mountain.Points[1].Y);
             pathGrow.mountain1.Points[2] = new System.Windows.Point(130 -(double)e.NewValue, temp);
+            pathGrow.path.Height = pathGrow.mountain.Points[1].Y;
             pathGrow.mountain1.Opacity = 1.0;
+            pathGrow.path.Opacity = 1.0;
+            pathGrow.path.Height = 150 - pathGrow.mountain.Points[1].Y;
+            pathGrow.path.SetValue(Canvas.TopProperty, pathGrow.mountain.Points[1].Y);
+            System.Diagnostics.Debug.WriteLine((double)e.NewValue);
+            //System.Diagnostics.Debug.WriteLine(pathGrow.path.Height);
             //pathGrow.mountain1.Points[2] = new Point(0, (double)e.NewValue);
 
         }
@@ -132,6 +138,7 @@ namespace CPSC_481_Trailexplorers
             //}
 
             pathGrow.mountain1.Opacity = 0.0;
+            pathGrow.path.Opacity = 0.0;
             //double XOffset0 = pathGrow.mountain1.Points[0].Y / slope;
             //double XOffset2 = pathGrow.mountain1.Points[2].Y / slope;
             //System.Diagnostics.Debug.WriteLine(XOffset0);
@@ -187,7 +194,7 @@ namespace CPSC_481_Trailexplorers
 
         private void Darken_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(darken.Opacity);
+            //System.Diagnostics.Debug.WriteLine(darken.Opacity);
         }
     }
 }

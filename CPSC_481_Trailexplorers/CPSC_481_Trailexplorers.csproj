@@ -240,5 +240,8 @@
   <ItemGroup>
     <Resource Include="HikeImages\cLake.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\path.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
