@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace CPSC_481_Trailexplorers
 {
-    public class Park
+    public class SliderControl3
     {
-        public string ParkName { get; set; }
-        public int ParkId { get; set; }
-
-        public int diff { get; set; }
+        public string SliderName3 { get; set; }
+        public int SliderId3 { get; set; }
     }
+
+
+
 }

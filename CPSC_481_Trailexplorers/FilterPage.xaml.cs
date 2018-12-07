@@ -126,9 +126,15 @@ namespace CPSC_481_Trailexplorers
         }
 
 
-        private void SliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        public void SliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            //get reference 
+            var slider = sender as Slider;
+            //get value
+            double value = slider.Value;
+
             timeValueLabel.Content = sliderTime.Value.ToString();
+
             //if (sliderTime.Value == 10)
             //{
             //    timeAnimationFill.ProgressValue = 99.9999999999;
@@ -192,9 +198,14 @@ namespace CPSC_481_Trailexplorers
 
             Province.Text = Properties.Settings.Default.Province;
             dropDownPark.Text = Properties.Settings.Default.Park;
-            
 
-            
+            sliderTime.Value = Properties.Settings.Default.sliderTime;
+            sliderElevation.Value= Properties.Settings.Default.sliderElevation;
+            sliderDistance.Value = Properties.Settings.Default.sliderDistance;
+
+
+
+
         }
 
         public void SaveSettings()
@@ -205,6 +216,10 @@ namespace CPSC_481_Trailexplorers
             Properties.Settings.Default.Radio1 = easyRadio.IsChecked ?? false;
             Properties.Settings.Default.Radio2 = mediumRadio.IsChecked ?? false;
             Properties.Settings.Default.Radio3 = hardRadio.IsChecked ?? false;
+
+            Properties.Settings.Default.sliderTime = sliderTime.Value;
+            Properties.Settings.Default.sliderElevation= sliderElevation.Value;
+            Properties.Settings.Default.sliderDistance = sliderDistance.Value;
 
             Properties.Settings.Default.Save();
         }
