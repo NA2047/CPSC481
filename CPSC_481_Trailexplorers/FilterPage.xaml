@@ -29,7 +29,7 @@
         <Label x:Name="pleaseFill" Content="Please fill the following items" Margin="108,214,108,99.655" FontSize="16"/>
         <Label  x:Name="locationLablel" Content="Hike Location" Margin="153,255,153,61.655" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
 
-        <ComboBox x:Name="Province" ItemsSource="{Binding ProvinceCollection}" SelectedItem="{Binding SelectedProvince}" DisplayMemberPath="ProvinceName" IsEditable="True" Margin="40,294,229,0" Height="31" IsDropDownOpen="False" IsReadOnly="False" VerticalAlignment="Top" >
+        <ComboBox x:Name="Province" ItemsSource="{Binding ProvinceCollection}" SelectedItem="{Binding SelectedProvince}" DisplayMemberPath="ProvinceName" IsEditable="False" Margin="40,294,229,0" Height="31" IsDropDownOpen="False" IsReadOnly="False" VerticalAlignment="Top" >
             <!--<ComboBoxItem Content="ALBERTA"/>
             <ComboBoxItem Content="BRITISH COLUMBIA"/>
             <ComboBoxItem Content="MANITOBA"/>
@@ -44,7 +44,7 @@
             <ComboBoxItem Content="NUNAVUT"/>
             <ComboBoxItem Content="YUKON"/>-->
         </ComboBox>
-        <ComboBox x:Name="dropDownPark" ItemsSource="{Binding SelectedProvince.Parks}"  DisplayMemberPath="ParkName" IsEditable="True" Margin="233,294,36,0" Height="31" Background="Black" VerticalAlignment="Top" Loaded="dropDownPark_Loaded" SelectionChanged="dropDownPark_SelectionChanged" >
+        <ComboBox x:Name="dropDownPark" ItemsSource="{Binding SelectedProvince.Parks}"  DisplayMemberPath="ParkName" IsEditable="False" Margin="233,294,36,0" Height="31" Background="Black" VerticalAlignment="Top" Loaded="dropDownPark_Loaded" SelectionChanged="dropDownPark_SelectionChanged" >
             <!--<ComboBoxItem Content="A"/>
             <ComboBoxItem Content="B"/>
             <ComboBoxItem Content="M"/>
@@ -71,7 +71,7 @@
 
         <Label  x:Name="timeLablel" Content="Time (Hr)" Margin="171,61.345,171,322" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
 
-        <Slider x:Name="sliderTime" ValueChanged="SliderTime_ValueChanged" Margin="80,105.345,80,287" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
+        <Slider x:Name="sliderTime"  Value="{Binding SelectedProvince.SliderCollection }" ValueChanged="SliderTime_ValueChanged"  Margin="80,105.345,80,287" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>

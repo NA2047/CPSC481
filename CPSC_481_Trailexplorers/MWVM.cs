@@ -10,13 +10,67 @@ namespace CPSC_481_Trailexplorers
 {
     public class MWVM : INotifyPropertyChanged
     {
+        /*private int _boundNumber;
+        public int BoundNumber
+        {
+            get { return _boundNumber; }
+            set
+            {
+                if(_boundNumber != null)
+                {
+                    _boundNumber = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }*/
+
         public MWVM()
         {
             ProvinceCollection = new ObservableCollection<Province>();
             ParksCollection = new ObservableCollection<Park>();
             DifficultyCollection = new ObservableCollection<Difficulty>();
+            SliderCollection = new ObservableCollection<Slidercontrol1>();
+            SliderCollection2 = new ObservableCollection<SliderControl2>();
+            SliderCollection3 = new ObservableCollection<SliderControl3>();
             LoadData();
         }
+        public ObservableCollection<SliderControl3> _SliderCollection3;
+
+        public ObservableCollection<SliderControl3> SliderCollection3
+        {
+            get { return _SliderCollection3; }
+            set
+            {
+                _SliderCollection3 = value;
+                NotifyPropertyChanged("SliderCollection3");
+            }
+        }
+
+
+        public ObservableCollection<SliderControl2> _SliderCollection2;
+
+        public ObservableCollection<SliderControl2> SliderCollection2
+        {
+            get { return _SliderCollection2; }
+            set
+            {
+                _SliderCollection2 = value;
+                NotifyPropertyChanged("SliderCollection2");
+            }
+        }
+
+        public ObservableCollection<Slidercontrol1> _SliderCollection;
+
+        public ObservableCollection<Slidercontrol1> SliderCollection
+        {
+            get { return _SliderCollection; }
+            set
+            {
+                _SliderCollection = value;
+                NotifyPropertyChanged("SliderCollection");
+            }
+        }
+
 
         public ObservableCollection<Difficulty> _DifficultyCollection;
 
@@ -66,7 +120,7 @@ namespace CPSC_481_Trailexplorers
             set
             {
                 _SelectedProvince = value;
-                if (_SelectedProvince != null && _SelectedProvince.Parks != null && _SelectedProvince.DifficultyCollection !=null)
+                if (_SelectedProvince != null && _SelectedProvince.Parks != null && _SelectedProvince.DifficultyCollection !=null && _SelectedProvince.SliderCollection != null)
                 {
                     ParksCollection = new ObservableCollection<Park>(_SelectedProvince.Parks);
                 }
@@ -81,12 +135,24 @@ namespace CPSC_481_Trailexplorers
                 {
                     ProvinceId = 1,
                     ProvinceName = "ALBERTA",
-                    Parks = new List<Park>
-                            {
-                                    new Park { ParkId = 1, ParkName = "asd"},
-                                    new Park { ParkId = 2, ParkName = "asdasd"},
-                                    new Park { ParkId = 3, ParkName = "asdasd"}
-                            }
+                    Parks = new List<Park>  
+                        {
+                                    new Park { ParkId = 1, ParkName = "Banff National Park", diff= 3},
+                                    new Park { ParkId = 2, ParkName = "Jasper National Park", diff=6},
+                                    new Park { ParkId = 3, ParkName = "Waterton Lakes National Park", diff=10}
+                        },
+                    
+                    SliderCollection = new List<Slidercontrol1>
+                    {
+                                    new Slidercontrol1 { SliderId1 = 1, SliderName1 = 1},
+                                    new Slidercontrol1 { SliderId1 = 2, SliderName1 = 2},
+                                    new Slidercontrol1 { SliderId1 = 3, SliderName1 = 3}
+                    }
+
+
+
+
+
                 });
                 ProvinceCollection.Add(new Province
                 {
@@ -94,9 +160,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "BRITISH COLUMBIA",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 4, ParkName = "G"},
-                                    new Park { ParkId = 5, ParkName = "P"},
-                                    new Park { ParkId = 6, ParkName = "M"}
+                                    new Park { ParkId = 4, ParkName = "Glacier National Park"},
+                                    new Park { ParkId = 5, ParkName = "Kootenay National Park"},
+                                    new Park { ParkId = 6, ParkName = "Yoho National Park"}
                             }
                 });
                 ProvinceCollection.Add(new Province
@@ -105,9 +171,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "MANITOBA",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 7, ParkName = "at"},
-                                    new Park { ParkId = 77, ParkName = "jab"},
-                                    new Park { ParkId = 546, ParkName = "Ma"}
+                                    new Park { ParkId = 7, ParkName = "Nopiming"},
+                                    new Park { ParkId = 77, ParkName = "Riding Mountain"},
+                                    new Park { ParkId = 546, ParkName = "Wapusk National Park"}
                             }
                 });
 
@@ -117,9 +183,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "NEW BRUNSWICK",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 7324, ParkName = "atfdsgs"},
-                                    new Park { ParkId = 77234234, ParkName = "dfgdfjab"},
-                                    new Park { ParkId = 542342346, ParkName = "Mdfgdfga"}
+                                    new Park { ParkId = 7324, ParkName = "Fundy"},
+                                    new Park { ParkId = 77234234, ParkName = "Mount Carleton"},
+                                    new Park { ParkId = 542342346, ParkName = "Parlee Beach"}
                             }
                 });
 
@@ -129,9 +195,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "NEWFOUNDLAND and LABRADOR",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 7324324, ParkName = "gfdfg"},
-                                    new Park { ParkId = 231, ParkName = "fdgf"},
-                                    new Park { ParkId = 23123, ParkName = "fdg"}
+                                    new Park { ParkId = 7324324, ParkName = "Gros Morne"},
+                                    new Park { ParkId = 231, ParkName = "Terra Nova"},
+                                    new Park { ParkId = 23123, ParkName = "Western Brook"}
                             }
                 });
 
@@ -141,9 +207,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "NOVA SCOTIA",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 4535, ParkName = "fg"},
-                                    new Park { ParkId = 4543543, ParkName = "jhkhj"},
-                                    new Park { ParkId = 234234, ParkName = "jhkjkkjhk"}
+                                    new Park { ParkId = 4535, ParkName = "Cape Breton"},
+                                    new Park { ParkId = 4543543, ParkName = "Kejimkujik"},
+                                    new Park { ParkId = 234234, ParkName = "Sable Island"}
                             }
                 });
 
@@ -153,23 +219,13 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "ONTARIO",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 756856, ParkName = "fghfgh"},
-                                    new Park { ParkId = 456, ParkName = "ghjgf"},
-                                    new Park { ParkId = 56, ParkName = "hj"}
+                                    new Park { ParkId = 756856, ParkName = "Bruce Peninsula"},
+                                    new Park { ParkId = 456, ParkName = "Point Pelee"},
+                                    new Park { ParkId = 56, ParkName = "Sandbanks"}
                             }
                 });
 
-                ProvinceCollection.Add(new Province
-                {
-                    ProvinceId = 8,
-                    ProvinceName = "ONTARIO",
-                    Parks = new List<Park>
-                            {
-                                    new Park { ParkId = 5647, ParkName = "gfh"},
-                                    new Park { ParkId = 67, ParkName = "gfh"},
-                                    new Park { ParkId = 21312, ParkName = "hghj"}
-                            }
-                });
+
 
                 ProvinceCollection.Add(new Province
                 {
@@ -177,9 +233,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "PRINCE EDWARD ISLAND",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 345435, ParkName = "dfgdfgdf"},
-                                    new Park { ParkId = 345435, ParkName = "gdfghfdghffh"},
-                                    new Park { ParkId = 7868, ParkName = "hghfghfghj"}
+                                    new Park { ParkId = 345435, ParkName = "Cabot Beach"},
+                                    new Park { ParkId = 345435, ParkName = "Northumberland"},
+                                    new Park { ParkId = 7868, ParkName = "Union Corner"}
                             }
                 });
 
@@ -189,9 +245,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "QUEBEC",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 435345, ParkName = "sdf"},
-                                    new Park { ParkId = 4534543, ParkName = "dsf"},
-                                    new Park { ParkId = 435, ParkName = "dsfsd"}
+                                    new Park { ParkId = 435345, ParkName = "Hautes-Gorges"},
+                                    new Park { ParkId = 4534543, ParkName = "Jacques Cartier"},
+                                    new Park { ParkId = 435, ParkName = "Gaspesie"}
                             }
                 });
 
@@ -201,9 +257,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "SASCATCHEWAN",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 345, ParkName = "sdf"},
-                                    new Park { ParkId = 34543543, ParkName = "dsf"},
-                                    new Park { ParkId = 34534, ParkName = "dsfsd"}
+                                    new Park { ParkId = 345, ParkName = "Grasslands"},
+                                    new Park { ParkId = 34543543, ParkName = "Meadow Lake"},
+                                    new Park { ParkId = 34534, ParkName = "Prince Albert"}
                             }
                 });
 
@@ -213,9 +269,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "NORTHWEST TERRITORIES",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 456456, ParkName = "sdfsdf"},
-                                    new Park { ParkId = 56, ParkName = "sdfsdfsdf"},
-                                    new Park { ParkId = 456456765, ParkName = "s"}
+                                    new Park { ParkId = 456456, ParkName = "Nahanni"},
+                                    new Park { ParkId = 56, ParkName = "Grand Teton"},
+                                    new Park { ParkId = 456456765, ParkName = "Olympic"}
                             }
                 });
 
@@ -225,9 +281,9 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "NUNAVUT",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 123213, ParkName = "sdfgsdghgdgfh"},
-                                    new Park { ParkId = 324324, ParkName = "sdfsdf"},
-                                    new Park { ParkId = 3434, ParkName = "dsdfgsdf"}
+                                    new Park { ParkId = 123213, ParkName = "Auyuittuq"},
+                                    new Park { ParkId = 324324, ParkName = "Quttinirpaaq"},
+                                    new Park { ParkId = 3434, ParkName = "Ukkusiksalik "}
                             }
                 });
 
@@ -237,15 +293,16 @@ namespace CPSC_481_Trailexplorers
                     ProvinceName = "YUKON",
                     Parks = new List<Park>
                             {
-                                    new Park { ParkId = 1234214, ParkName = "sfg"},
-                                    new Park { ParkId = 34343, ParkName = "dfgdfg"},
-                                    new Park { ParkId = 34342, ParkName = "jkhjkhjk"}
+                                    new Park { ParkId = 1234214, ParkName = "Ivvavik "},
+                                    new Park { ParkId = 34343, ParkName = "Kluane"},
+                                    new Park { ParkId = 34342, ParkName = "Vuntut"}
                             }
                 });
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
+        
         public void NotifyPropertyChanged(String info)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));

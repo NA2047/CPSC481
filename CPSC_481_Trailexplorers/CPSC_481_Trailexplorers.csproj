@@ -78,6 +78,7 @@
     <Compile Include="CircleGrow.xaml.cs">
       <DependentUpon>CircleGrow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
     <Compile Include="FilterPage.xaml.cs">
       <DependentUpon>FilterPage.xaml</DependentUpon>
@@ -109,6 +110,8 @@
     <Compile Include="Park.cs" />
     <Compile Include="Province.cs" />
     <Compile Include="Segue.cs" />
+    <Compile Include="Slider.cs" />
+    <Compile Include="SliderControl3.cs" />
     <Compile Include="testPage.xaml.cs">
       <DependentUpon>testPage.xaml</DependentUpon>
     </Compile>

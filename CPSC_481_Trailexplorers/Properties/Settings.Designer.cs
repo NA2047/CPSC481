@@ -82,5 +82,41 @@ namespace CPSC_481_Trailexplorers.Properties {
                 this["Radio3"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double sliderTime {
+            get {
+                return ((double)(this["sliderTime"]));
+            }
+            set {
+                this["sliderTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double sliderElevation {
+            get {
+                return ((double)(this["sliderElevation"]));
+            }
+            set {
+                this["sliderElevation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double sliderDistance {
+            get {
+                return ((double)(this["sliderDistance"]));
+            }
+            set {
+                this["sliderDistance"] = value;
+            }
+        }
     }
 }
