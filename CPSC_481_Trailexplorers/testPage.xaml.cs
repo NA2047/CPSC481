@@ -46,5 +46,11 @@ namespace CPSC_481_Trailexplorers
             Slider Slider1 = (Slider)sender;
             poop.MountainValueElevation = Slider1.Value;
         }
+
+        private void Slider_ValueChanged_2(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Slider Slider1 = (Slider)sender;
+            poop.darken.Opacity = (Slider1.Value / 10);
+        }
     }
 }
