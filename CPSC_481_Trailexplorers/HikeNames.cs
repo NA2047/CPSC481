@@ -24,6 +24,7 @@ namespace CPSC_481_Trailexplorers
             hname=name;
             
         }
+
         public int HikeElevation { get; set; }
         public int HikeTime { get; set; }
         public int HikeDistance { get; set; }

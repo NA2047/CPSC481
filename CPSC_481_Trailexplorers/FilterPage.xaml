@@ -49,6 +49,7 @@
             <ComboBoxItem Content="YUKON"/>-->
         </ComboBox>
         <ComboBox x:Name="dropDownPark" ItemsSource="{Binding SelectedProvince.Parks}"  DisplayMemberPath="ParkName" IsEditable="False" Margin="233,294,36,0" Height="31" Background="Black" VerticalAlignment="Top" Loaded="dropDownPark_Loaded" SelectionChanged="dropDownPark_SelectionChanged" >
+            <!--SelectedValue="{Binding ElementName=sliderTime, Path=Value, Mode=TwoWay}"-->
         </ComboBox>
         <ContentControl DataContext="{Binding ElementName=dropDownPark, Path=SelectedItem}">
             <ContentControl.Style>
@@ -77,7 +78,9 @@
 
         <Label  x:Name="timeLablel" Content="Time (Hr)" Margin="171,61.345,171,322" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
 
-        <Slider x:Name="sliderTime"  Value="{Binding SelectedProvince.SliderCollection }" ValueChanged="SliderTime_ValueChanged"  Margin="80,105.345,80,287" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
+        <Slider x:Name="sliderTime"  Value="{Binding ElementName=dropDownPark, Path=SelectedIndex, Mode=OneWayToSource}" Maximum="{Binding ElementName=dropDownPark, Path=Items.Count}" Minimum="0" TickFrequency=".5" ValueChanged="SliderTime_ValueChanged"  Margin="80,105.345,80,287" RenderTransformOrigin="-0.069,0.143"   TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
+            <!--Value="{Binding ElementName= dropDownPark, Path=Text}"-->
+            <!--Value="{Binding SelectedProvince.SliderCollection}"-->
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>
@@ -92,7 +95,7 @@
         </Slider>
         <Label x:Name="timeValueLabel" Content="0" Margin="208,130.333,171,0" VerticalAlignment="Top" RenderTransformOrigin="3.148,0.68" FontSize="14" Grid.Row="1"/>
         <Label  x:Name="elevationLabel" Content="Elevation 1000ft" Margin="140,148.345,134,235" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
-        <Slider x:Name="sliderElevation" ValueChanged="SliderElevation_ValueChanged" Margin="80,187.345,80,205" RenderTransformOrigin="-0.069,0.143" TickFrequency=".5" Maximum="10" Minimum="0" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
+        <Slider x:Name="sliderElevation"   Value="{Binding ElementName=dropDownPark, Path=SelectedIndex, Mode=OneWayToSource}" Maximum="{Binding ElementName=dropDownPark, Path=Items.Count}" TickFrequency="1"  Minimum="0" ValueChanged="SliderElevation_ValueChanged" Margin="80,187.345,80,205" RenderTransformOrigin="-0.069,0.143"  TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>
@@ -108,7 +111,8 @@
         <Label x:Name="elevationValueLabel" Content="0" Margin="208,214.333,171,0" VerticalAlignment="Top" FontSize="14" Grid.Row="1"/>
 
         <Label  x:Name="distanceLabel" Content="Distance" Margin="171,240.345,171,143" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
-        <Slider x:Name="sliderDistance" ValueChanged="SliderDistance_ValueChanged" Margin="80,279.345,80,113" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Row="1">
+        <Slider x:Name="sliderDistance"  Value="{Binding ElementName=dropDownPark, Path=SelectedIndex, Mode=OneWayToSource}" Maximum="{Binding ElementName=dropDownPark, Path=Items.Count}" Minimum="0" TickFrequency="1" ValueChanged="SliderDistance_ValueChanged" Margin="80,279.345,80,113" RenderTransformOrigin="-0.069,0.143"   TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Row="1">
+            <!--Value="{Binding ElementName=sliderElevation, Path=SelectionEnd, Mode=TwoWay}" Maximum="{Binding ElementName=sliderElevation, Path=Value}"-->
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>

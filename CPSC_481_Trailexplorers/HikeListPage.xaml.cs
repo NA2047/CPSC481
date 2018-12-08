@@ -19,14 +19,14 @@ namespace CPSC_481_Trailexplorers
     /// <summary>
     /// Interaction logic for HikeListPage.xaml
     /// </summary>
-    public partial class HikeListPage : UserControl
+    public partial class HikeListPage: UserControl 
     {
         public String searchTextvalue = ""; 
         
         public List<string> banffNames = null;
 
         BanffHikeNames Hike1 = new BanffHikeNames();
-        Hike1.Hikename("CoryPass"); 
+        //Hike1.Hikename("CoryPass"); 
 
         public List<string> Bname { get { return banffNames; } set { banffNames = value; } }
         
@@ -35,7 +35,8 @@ namespace CPSC_481_Trailexplorers
         public HikeListPage()
         {
             InitializeComponent();
-
+            //List<string> hikes = new List<string> { "Banff National Park", "Jasper National Park", "Waterton National Park"};
+            //dropdownpark.ItemsSource = hikes;
             //test();
 
         }
