@@ -21,8 +21,8 @@ namespace CPSC_481_Trailexplorers
     /// </summary>
     public partial class HikeListPage : UserControl
     {
-        private String searchTextvalue = "";        
-
+        private String searchTextvalue = "";
+        public String ds = null;
         public HikeListPage()
         {
             InitializeComponent();
@@ -68,6 +68,11 @@ namespace CPSC_481_Trailexplorers
             searchTextvalue = searchBoxInput.Text;
             System.Diagnostics.Debug.WriteLine(searchTextvalue);
             //    test();
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Segue.Switch(new FilterPage());
         }
     }
 }

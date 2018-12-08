@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,18 @@ namespace CPSC_481_Trailexplorers
     /// </summary>
     public partial class MainWindow : Window
     {
+        //public static List<Hike> allHikes = null;
         public MainWindow()
         {
+            
             InitializeComponent();
-            //initialize MainWindow to Login page by default
-            Segue.pageSwitchWindow = this;
+        //initialize MainWindow to Login page by default
+        Segue.pageSwitchWindow = this;
+            loadCSV.stuff();
 
             Segue.Switch(new LoadingPage());
+            
+           
             //this.DataContext = new MWVM();
 
         }
@@ -42,5 +48,11 @@ namespace CPSC_481_Trailexplorers
         {
             this.Content = nextPage;
         }
+
+
+        private void loadHikes()
+        {
+          
+    }
     }
 }

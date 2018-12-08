@@ -22,6 +22,7 @@ namespace CPSC_481_Trailexplorers
     {
         public HikeProfilePage()
         {
+          
             InitializeComponent();
         }
 

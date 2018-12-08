@@ -15,6 +15,7 @@
             <StackPanel local:MarginSetter.Margin="1" x:Name="hikeListView"  VerticalAlignment="Top"  Height="Auto" Width="auto"/>
 
         </ScrollViewer>
+        <Image HorizontalAlignment="Left" Height="46" Margin="372,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/homeIcon.png" MouseDown="Image_MouseDown"/>
 
 
 

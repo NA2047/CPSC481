@@ -17,9 +17,7 @@
             <Polygon Fill="SlateGray" Canvas.ZIndex="3" x:Name="mountain1" Height="150" Points="0,150 65,150 130,150"
         
           Canvas.Left="90" Width="130"   >
-                <Polygon.Effect>
-                    <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
-                </Polygon.Effect>
+               
             </Polygon>
             <Rectangle  x:Name="darken"  Fill="Black" Opacity="0" Height="150" Width="437" Canvas.Left="-68"/>
             <Image  Opacity="0" x:Name="path" Canvas.ZIndex="2" Source="Assets/path.png" Height="150" Canvas.Left="105" Width="100" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>

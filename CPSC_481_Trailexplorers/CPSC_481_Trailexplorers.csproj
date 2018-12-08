@@ -89,6 +89,7 @@
     <Compile Include="GuidePage.xaml.cs">
       <DependentUpon>GuidePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Hike.cs" />
     <Compile Include="HikeItem.xaml.cs">
       <DependentUpon>HikeItem.xaml</DependentUpon>
     </Compile>
@@ -98,9 +99,7 @@
     <Compile Include="HikeProfilePage.xaml.cs">
       <DependentUpon>HikeProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="lineGrow.xaml.cs">
-      <DependentUpon>lineGrow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="loadCSV.cs" />
     <Compile Include="LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
@@ -147,10 +146,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="lineGrow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="LoadingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -190,6 +185,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="files\parkData.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
