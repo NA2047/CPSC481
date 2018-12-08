@@ -24,13 +24,15 @@ namespace CPSC_481_Trailexplorers
     {
         private String searchTextvalue = "";
         public String ds = null;
-        
+        private Hashtable hikes = new Hashtable();
+
         public HikeListPage()
         {
             InitializeComponent();
-            test();
-            Hashtable poop = FilterPage.filterResults;
-            loadCSV.SearchOption(poop);
+        
+            Hashtable results = FilterPage.filterResults;
+            hikes = loadCSV.SearchOption(results);
+            createList();
 
         }
 
@@ -39,7 +41,7 @@ namespace CPSC_481_Trailexplorers
             Segue.Switch(new FilterPage());
         }
 
-        private void test()
+        private void createList()
         {
             //if (hikeListView == null)
             //{
@@ -50,19 +52,39 @@ namespace CPSC_481_Trailexplorers
                 hikeListView.Children.Clear();
             //}
            
-            List<HikeItem> hikeList;
+            //List<HikeItem> hikeList;
 
-            HikeItem hikeitem = new HikeItem();
-            HikeItem hikeitem1 = new HikeItem();
-            HikeItem hikeitem2 = new HikeItem();
-            HikeItem hikeitem3 = new HikeItem();
-            HikeItem hikeitem4 = new HikeItem();
-            HikeItem hikeitem5 = new HikeItem();
-            HikeItem[] RolesList = new HikeItem[] { hikeitem, hikeitem1, hikeitem2, hikeitem3, hikeitem4, hikeitem5 };
+            //
+            //HikeItem hikeitem1 = new HikeItem();
+            //HikeItem hikeitem2 = new HikeItem();
+            //HikeItem hikeitem3 = new HikeItem();
+            //HikeItem hikeitem4 = new HikeItem();
+            //HikeItem hikeitem5 = new HikeItem();
+            //HikeItem[] RolesList = new HikeItem[] { hikeitem, hikeitem1, hikeitem2, hikeitem3, hikeitem4, hikeitem5 };
 
-            foreach (var item in RolesList)
+            foreach (DictionaryEntry pair in hikes)
             {
-                hikeListView.Children.Add(item);
+                HikeItem hikeitem = new HikeItem();
+
+                //System.Diagnostics.Debug.WriteLine(item);
+                Hike temp = (Hike)pair.Value;
+                hikeitem.distanceDisplayLabel.Content = (string)temp.Distance + " km";
+                hikeitem.elevationDisplayLabel.Content = (string)temp.Elevation + " m";
+                string Ltime = temp.Time.Split(Convert.ToChar('-'))[0] + "hr" ;
+                string Htime = temp.Time.Split(Convert.ToChar('-'))[1] + "hr";
+                if(Ltime !=  Htime)
+                {
+                    hikeitem.timeDisplayLabel.Content = Ltime + " to " + Htime;
+                }
+                else
+                {
+                    hikeitem.timeDisplayLabel.Content =  Htime;
+                }
+              
+                hikeitem.openClosedLabel.Content = temp.Open;
+                hikeitem.parkNameDisplayLabel.Content = temp.Name;
+
+                hikeListView.Children.Add(hikeitem);
             }
 
         }

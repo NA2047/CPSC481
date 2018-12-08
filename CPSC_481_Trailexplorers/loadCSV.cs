@@ -50,11 +50,25 @@ namespace CPSC_481_Trailexplorers
         public static Hashtable SearchOption(Hashtable param)
         {
               Hashtable poop = new Hashtable();
+            Hashtable poop2 = param;
+            double searchElevation = (double)param["elevation"];
+            double searchTime = (double)param["time"];
+            string searchPark = (string)param["park"]; 
+            string searchDifficulty = (string)param["difficulty"];
+            double searchDistance = (double)param["distance"]; 
+
+
+
 
             foreach (Hike hike in bigList)
             {
 
-                if(hike.Difficulty == (string)param["difficulty"] )
+                String low = (string)hike.Time;
+                String high = (string)hike.Time;
+                double rangeL= double.Parse(low.Split(Convert.ToChar("-"))[0]);
+                double rangeH = double.Parse(high.Split(Convert.ToChar("-"))[1]);
+
+                if(hike.Difficulty == searchDifficulty && hike.Park == searchPark  && ((rangeL < searchTime && rangeH > searchTime) || (rangeL == searchTime || rangeH == searchTime)) && double.Parse(hike.Elevation) >= (searchElevation*100) &&  double.Parse(hike.Distance) <= searchDistance) 
                 {
                     poop[hike.Name] = hike;
                 }
