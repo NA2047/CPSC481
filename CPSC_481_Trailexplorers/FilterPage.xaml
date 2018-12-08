@@ -18,7 +18,8 @@
         <Grid.Effect>
             <DropShadowEffect/>
         </Grid.Effect>
-        <Image x:Name="logoImage" Canvas.ZIndex="3" 
+
+        <!--<Image x:Name="logoImage" Canvas.ZIndex="3" 
                Source="Logos/logoWBold.png" RenderOptions.BitmapScalingMode="Fant" Opacity="1" Margin="108,0,108,152.655" Stretch="UniformToFill"/>
         <Image x:Name="backArrowTop" HorizontalAlignment="Left" Height="46" Margin="0,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/backArrow.png" MouseDown="Back_MouseDown"/>
         <Image x:Name="backGroundTop" HorizontalAlignment="Left"  Margin="0,53,0,141.655" Width="432" Source="Backgroundimages/trail.png" Stretch="UniformToFill" >
@@ -26,6 +27,9 @@
                 <BlurEffect/>
             </Image.Effect>
         </Image>
+        -->
+
+
         <Label x:Name="pleaseFill" Content="Please fill the following items" Margin="108,214,108,99.655" FontSize="16"/>
         <Label  x:Name="locationLablel" Content="Hike Location" Margin="153,255,153,61.655" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold"/>
 
@@ -86,7 +90,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Label x:Name="timeValueLabel" Content="0" Margin="208,130.345,199,0" VerticalAlignment="Top" RenderTransformOrigin="3.148,0.68" FontSize="14" Grid.Row="1"/>
+        <Label x:Name="timeValueLabel" Content="0" Margin="208,130.333,171,0" VerticalAlignment="Top" RenderTransformOrigin="3.148,0.68" FontSize="14" Grid.Row="1"/>
         <Label  x:Name="elevationLabel" Content="Elevation 1000ft" Margin="140,148.345,134,235" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
         <Slider x:Name="sliderElevation" ValueChanged="SliderElevation_ValueChanged" Margin="80,187.345,80,205" RenderTransformOrigin="-0.069,0.143" TickFrequency=".5" Maximum="10" Minimum="0" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
@@ -101,7 +105,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Label x:Name="elevationValueLabel" Content="0" Margin="208,214.345,199,0" VerticalAlignment="Top" FontSize="14" Grid.Row="1"/>
+        <Label x:Name="elevationValueLabel" Content="0" Margin="208,214.333,171,0" VerticalAlignment="Top" FontSize="14" Grid.Row="1"/>
 
         <Label  x:Name="distanceLabel" Content="Distance" Margin="171,240.345,171,143" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
         <Slider x:Name="sliderDistance" ValueChanged="SliderDistance_ValueChanged" Margin="80,279.345,80,113" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Row="1">
@@ -122,23 +126,10 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="distanceValueLabel" Content="0" Margin="208,304.345,199,0" FontSize="14" Height="29" VerticalAlignment="Top" Grid.Row="1"/>
-        <Polygon x:Name="elevationAnimationFill"  
-      Points="0,1 0.5,0 1,1"  
-      Fill="DarkSlateGray"  
-      Stretch="Fill"  
- 
-      StrokeThickness="2" Margin="357,198.345,22,219" Grid.Row="1" >
-            <Polygon.Effect>
-                <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
-            </Polygon.Effect>
-        </Polygon>
-        <local:CircleGrow x:Name="timeAnimationFill" Margin="368,69.345,24,308" ProgressValue="100" Grid.Row="1" >
-            <local:CircleGrow.Effect>
-                <DropShadowEffect/>
-            </local:CircleGrow.Effect>
+        <Label x:Name="distanceValueLabel" Content="0" Margin="208,304.333,171,0" FontSize="14" Height="29" VerticalAlignment="Top" Grid.Row="1"/>
+    
 
-        </local:CircleGrow>
+        <local:AnimationFilter x:Name="animationView" Height="150" Margin="0,46,0,0" VerticalAlignment="Top"/>
 
 
 

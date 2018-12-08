@@ -130,22 +130,33 @@ namespace CPSC_481_Trailexplorers
 
         public void SliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+
             //get reference 
             var slider = sender as Slider;
             //get value
             double value = slider.Value;
 
+            //double DaySacle = poop.timeInt / 24.0;
+            //double slideScale = 
+            //System.Diagnostics.Debug.WriteLine(poop.darken.Opacity);
+
+            if (animationView.DarkenUporDownP > slider.Value)
+            {
+                //going down
+                animationView.darken.Opacity = (slider.Value / 24);
+                animationView.DarkenUporDownP = slider.Value;
+            }
+            else
+            {
+                //going up 
+                animationView.darken.Opacity = (slider.Value / 24);
+                animationView.DarkenUporDownP = slider.Value;
+            }
+
+
             timeValueLabel.Content = sliderTime.Value.ToString();
 
-            //if (sliderTime.Value == 10)
-            //{
-            //    timeAnimationFill.ProgressValue = 99.9999999999;
-            //}
-            //else
-            //{
-            timeAnimationFill.ProgressValue = sliderTime.Value * 10;
-
-            //}
+       
 
 
         }
@@ -153,26 +164,48 @@ namespace CPSC_481_Trailexplorers
         private void SliderDistance_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             distanceValueLabel.Content = sliderDistance.Value.ToString();
+            //get reference 
+            var slider = sender as Slider;
+            //get value
+            double value = slider.Value;
+
+            var ratio = value / 10.0;
+
+            var result = ratio * 65;
+            animationView.MountainValueElevation =  result;
         }
 
         private void SliderElevation_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            elevationValueLabel.Content = sliderElevation.Value.ToString();
-            
-            if (decOrInc < sliderElevation.Value && elevationAnimationFill.Margin.Top >= 440)
-            {
-                elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, elevationAnimationFill.Margin.Top - 4, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
-            }
-            else {
-                elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, elevationAnimationFill.Margin.Top + 4, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
+            //get reference 
+            var slider = sender as Slider;
+            //get value
+            double value = slider.Value;
 
-            }
-            if (sliderElevation.Value == 0)
-            {
-                decOrInc = double.MaxValue;
-                elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, 550.00, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
-            }
-            decOrInc = sliderElevation.Value;
+            var ratio = value / 10.0;
+
+            var result = ratio * 150;
+            animationView.MountainValue = 150 - result;
+
+
+
+
+            elevationValueLabel.Content = sliderElevation.Value.ToString();
+
+            //if (decOrInc < sliderElevation.Value && elevationAnimationFill.Margin.Top >= 440)
+            //{
+            //    elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, elevationAnimationFill.Margin.Top - 4, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
+            //}
+            //else {
+            //    elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, elevationAnimationFill.Margin.Top + 4, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
+
+            //}
+            //if (sliderElevation.Value == 0)
+            //{
+            //    decOrInc = double.MaxValue;
+            //    elevationAnimationFill.Margin = new Thickness(elevationAnimationFill.Margin.Left, 550.00, elevationAnimationFill.Margin.Right, elevationAnimationFill.Margin.Bottom);
+            //}
+            //decOrInc = sliderElevation.Value;
         }
 
         private void dropDownPark_Loaded(object sender, RoutedEventArgs e)
