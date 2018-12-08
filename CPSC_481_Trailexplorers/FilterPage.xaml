@@ -57,7 +57,7 @@
                         <DataTrigger Binding="{Binding}" Value="Banff National Park">
                             <Setter Property="Content">
                                 <Setter.Value>
-                                    <local:Park ></local:Park>
+                                    <local:BanffHikeNames></local:BanffHikeNames>
                                 </Setter.Value>
                             </Setter>
                         </DataTrigger>

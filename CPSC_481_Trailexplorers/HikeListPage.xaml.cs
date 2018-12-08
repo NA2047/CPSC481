@@ -21,21 +21,31 @@ namespace CPSC_481_Trailexplorers
     /// </summary>
     public partial class HikeListPage : UserControl
     {
-        private String searchTextvalue = "";        
+        public String searchTextvalue = ""; 
+        
+        public List<string> banffNames = null;
+
+        BanffHikeNames Hike1 = new BanffHikeNames();
+        Hike1.Hikename("CoryPass"); 
+
+        public List<string> Bname { get { return banffNames; } set { banffNames = value; } }
+        
+        
 
         public HikeListPage()
         {
             InitializeComponent();
-            test();
+
+            //test();
 
         }
 
-        private void Back_MouseDown(object sender, MouseEventArgs e)
+        public void Back_MouseDown(object sender, MouseEventArgs e)
         {
             Segue.Switch(new FilterPage());
         }
 
-        private void test()
+        /*private void test()
         {
             //if (hikeListView == null)
             //{
@@ -61,9 +71,9 @@ namespace CPSC_481_Trailexplorers
                 hikeListView.Children.Add(item);
             }
 
-        }
+        }*/
 
-        private void searchBoxInput_TextChanged(object sender, TextChangedEventArgs e)
+        public void searchBoxInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             searchTextvalue = searchBoxInput.Text;
             System.Diagnostics.Debug.WriteLine(searchTextvalue);

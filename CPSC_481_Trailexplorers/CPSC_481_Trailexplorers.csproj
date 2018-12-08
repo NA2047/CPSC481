@@ -95,6 +95,7 @@
     <Compile Include="HikeListPage.xaml.cs">
       <DependentUpon>HikeListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HikeNames.cs" />
     <Compile Include="HikeProfilePage.xaml.cs">
       <DependentUpon>HikeProfilePage.xaml</DependentUpon>
     </Compile>
