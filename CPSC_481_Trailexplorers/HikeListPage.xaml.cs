@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections;
 
 
 namespace CPSC_481_Trailexplorers
@@ -23,10 +24,12 @@ namespace CPSC_481_Trailexplorers
     {
         private String searchTextvalue = "";
         public String ds = null;
+        
         public HikeListPage()
         {
             InitializeComponent();
             test();
+            Hashtable poop = FilterPage.filterResults;
 
         }
 

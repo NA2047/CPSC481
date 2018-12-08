@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Collections;
 
 namespace CPSC_481_Trailexplorers
 {
@@ -29,7 +30,7 @@ namespace CPSC_481_Trailexplorers
                 String[] csvFields = line.Split(Convert.ToChar(","));
                 //System.Diagnostics.Debug.WriteLine(csvFields.Length.ToString());
                 Hike newHike = new Hike();
-                String[] headers = { "Name", "Park", "Distance", "Elevation", "Difficulty", "Time", "Description" };
+                String[] headers = { "Name","Park","Open","Distance","Elevation","Difficulty","Time","Description" };
                 for (int i = 0; i< headers.Length; i++)
                 {
                     newHike[headers[i]] = csvFields[i];
@@ -44,6 +45,15 @@ namespace CPSC_481_Trailexplorers
 
             return allH;
                 
+        }
+
+        public static List<Hike> SearchOption(Hashtable param)
+        {
+            List<Hike> poop = null;
+
+
+
+            return poop;
         }
 
        

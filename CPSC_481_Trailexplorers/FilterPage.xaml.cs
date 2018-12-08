@@ -25,8 +25,8 @@ namespace CPSC_481_Trailexplorers
     public partial class FilterPage : UserControl
     {
 
-        Hashtable filterResults = new Hashtable();
-        private double decOrInc = double.MaxValue;
+        public static  Hashtable filterResults = new Hashtable();
+        //private double decOrInc = double.MaxValue;
 
         public FilterPage()
         {
@@ -35,7 +35,7 @@ namespace CPSC_481_Trailexplorers
             List<Hike> poop = loadCSV.bigList;
             foreach (Hike thing in poop)
             {
-                System.Diagnostics.Debug.WriteLine(thing.distance);
+                System.Diagnostics.Debug.WriteLine(thing.Elevation);
             }
 
         }
@@ -58,17 +58,17 @@ namespace CPSC_481_Trailexplorers
         {
             SaveSettings();
             GetSettings();
-            //if(Check_Location() && Check_Radio() && Check_Slider())
-            //{
-            Segue.Switch(new HikeListPage());
-            //}
-            //else
-            //{
-            //    filterResults.Clear();
-            //}
-
-
+            if (Check_Location() && Check_Radio() && Check_Slider())
+            {
+                Segue.Switch(new HikeListPage());
         }
+            else
+            {
+                filterResults.Clear();
+            }
+
+
+}
 
         /// <summary>
         /// 

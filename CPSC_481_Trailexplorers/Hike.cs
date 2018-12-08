@@ -8,15 +8,15 @@ namespace CPSC_481_Trailexplorers
 {
     class Hike
     {
-        public String elevation = "yo";
-        public String time = "hr";
-        public String distance = "km";
-        public String name = "Park Name";
-        public String open = "open";
-        public String difficulty = "how hard";
-        public String season = "fall";
-        public String description = "tell me";
-        public String park = "tell me";
+        private String elevation = "yo";
+        private String time = "hr";
+        private String distance = "km";
+        private String name = "Park Name";
+        private String open = "open";
+        private String difficulty = "how hard";
+        private String season = "fall";
+        private String description = "tell me";
+        private String park = "tell me";
       
         public Hike()
         {
