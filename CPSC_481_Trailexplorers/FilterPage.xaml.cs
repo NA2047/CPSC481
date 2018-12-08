@@ -32,6 +32,8 @@ namespace CPSC_481_Trailexplorers
         {
             InitializeComponent();
             this.DataContext = new MWVM();
+            /*List<string> parks = new List<string> { "Banff National Park"};
+            Controls.ItemsSource = controlTypes;*/
 
         }
         /// <summary>
