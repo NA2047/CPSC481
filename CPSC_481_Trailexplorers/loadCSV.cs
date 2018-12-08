@@ -47,9 +47,18 @@ namespace CPSC_481_Trailexplorers
                 
         }
 
-        public static List<Hike> SearchOption(Hashtable param)
+        public static Hashtable SearchOption(Hashtable param)
         {
-            List<Hike> poop = null;
+              Hashtable poop = new Hashtable();
+
+            foreach (Hike hike in bigList)
+            {
+
+                if(hike.Difficulty == (string)param["difficulty"] )
+                {
+                    poop[hike.Name] = hike;
+                }
+            }
 
 
 

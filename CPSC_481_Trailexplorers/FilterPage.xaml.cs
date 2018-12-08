@@ -101,7 +101,7 @@ namespace CPSC_481_Trailexplorers
             {
                 return false;
             }
-            filterResults.Add("difficulty", checkedButton.Name);
+            filterResults.Add("difficulty", checkedButton.Content);
 
 
             return true;

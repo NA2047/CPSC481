@@ -30,6 +30,7 @@ namespace CPSC_481_Trailexplorers
             InitializeComponent();
             test();
             Hashtable poop = FilterPage.filterResults;
+            loadCSV.SearchOption(poop);
 
         }
 
