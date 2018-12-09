@@ -25,7 +25,7 @@ namespace CPSC_481_Trailexplorers
     {
         private String time = DateTime.Now.ToString("HH:mm:ss");
         public int timeInt = 0;
-        private double slope = 0.0;
+  
         
         public AnimationFilter()
         {

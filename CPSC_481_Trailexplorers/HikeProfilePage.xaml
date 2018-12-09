@@ -13,7 +13,7 @@
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
-        <Label x:Name="hikeName" Content="Chester Lake" HorizontalAlignment="Left" Margin="110,53,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label x:Name="hikeName" Content="Big Beehive" HorizontalAlignment="Left" Margin="110,53,0,0" VerticalAlignment="Top" FontSize="36"/>
         <Label x:Name="hikeTime" Content="Time" HorizontalAlignment="Left" Margin="39,414,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label x:Name="hikeDistance" Content="Distance" HorizontalAlignment="Left" Margin="39,482,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label x:Name="hikeElevation" Content="Elevation" HorizontalAlignment="Left" Margin="39,516,0,0" VerticalAlignment="Top" FontSize="18"/>

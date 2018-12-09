@@ -25,13 +25,18 @@ namespace CPSC_481_Trailexplorers
     public partial class FilterPage : UserControl
     {
 
-        Hashtable filterResults = new Hashtable();
-        private double decOrInc = double.MaxValue;
+        public static  Hashtable filterResults = new Hashtable();
+        //private double decOrInc = double.MaxValue;
 
         public FilterPage()
         {
             InitializeComponent();
             this.DataContext = new MWVM();
+            List<Hike> poop = loadCSV.bigList;
+            foreach (Hike thing in poop)
+            {
+                System.Diagnostics.Debug.WriteLine(thing.Elevation);
+            }
 
         }
         /// <summary>
@@ -53,17 +58,17 @@ namespace CPSC_481_Trailexplorers
         {
             SaveSettings();
             GetSettings();
-            //if(Check_Location() && Check_Radio() && Check_Slider())
-            //{
-            Segue.Switch(new HikeListPage());
-            //}
-            //else
-            //{
-            //    filterResults.Clear();
-            //}
-
-
+            if (Check_Location() && Check_Radio() && Check_Slider())
+            {
+                Segue.Switch(new HikeListPage());
         }
+            else
+            {
+                filterResults.Clear();
+            }
+
+
+}
 
         /// <summary>
         /// 
@@ -79,8 +84,15 @@ namespace CPSC_481_Trailexplorers
                 return false;
             }
 
-
-            filterResults.Add("park", dropDownPark.Text);
+            if (filterResults.ContainsKey("park"))
+            {
+                filterResults["park"] =  dropDownPark.Text;
+            }
+            else
+            {
+                filterResults.Add("park", dropDownPark.Text);
+            }
+         
             return true;
 
         }
@@ -96,8 +108,15 @@ namespace CPSC_481_Trailexplorers
             {
                 return false;
             }
-            filterResults.Add("difficulty", checkedButton.Name);
-
+            //filterResults.Add("difficulty", checkedButton.Content);
+            if (filterResults.ContainsKey("difficulty"))
+            {
+                filterResults["difficulty"] = checkedButton.Content;
+            }
+            else
+            {
+                filterResults.Add("difficulty", checkedButton.Content);
+            }
 
             return true;
 
@@ -116,9 +135,19 @@ namespace CPSC_481_Trailexplorers
             {
                 return false;
             }
-            filterResults.Add("time", sliderTime.Value);
-            filterResults.Add("elevation", sliderElevation.Value);
-            filterResults.Add("distance", sliderDistance.Value);
+
+
+            //filterResults.Add("time", sliderTime.Value);
+            //filterResults.Add("elevation", sliderElevation.Value);
+            //filterResults.Add("distance", sliderDistance.Value);
+
+            filterResults["time"] = sliderTime.Value;
+
+            filterResults["elevation"] = sliderElevation.Value;
+
+            filterResults["distance"] = sliderDistance.Value;
+
+         
             return true;
 
 

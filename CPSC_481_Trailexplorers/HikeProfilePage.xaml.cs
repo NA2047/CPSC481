@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections;
 
 namespace CPSC_481_Trailexplorers
 {
@@ -20,9 +21,51 @@ namespace CPSC_481_Trailexplorers
     /// </summary>
     public partial class HikeProfilePage : UserControl
     {
+        private string v;
+
         public HikeProfilePage()
         {
+          
             InitializeComponent();
+            // loadimage
+            //Image myimage = new Image();
+            //BitmapImage bi3 = new BitmapImage();
+            //bi3.BeginInit();
+            //bi3.UriSource = new Uri("HikeProfileimages/"+hikeName.Content.ToString()+".jpg",UriKind.Relative);
+            //bi3.EndInit();
+            //myimage.Source = bi3;
+            //System.Diagnostics.Debug.WriteLine(hikeImage.Source.ToString());
+            //hikeImage.Source = bi3;
+            //System.Diagnostics.Debug.WriteLine(hikeImage.Source.ToString());
+            //hikeImage.Source = new Uri(hikeName.Content.ToString());
+        }
+
+        public HikeProfilePage(string v)
+        {
+            InitializeComponent();
+            this.v = v;
+            Hike hikeInfo = loadCSV.SearchByHikeName(v);
+
+            hikeDescriptionValue.Text = hikeInfo.Description;
+            hikeElevationValue.Content = hikeInfo.Elevation;
+            hikeName.Content = hikeInfo.Name;
+          
+            hikeTimeValue.Content = hikeInfo.Time;
+            hikeDistanceValue.Content = hikeInfo.Distance;
+            hikeElevationValue.Content = hikeInfo.Elevation;
+            hikeSeasonValue.Content = "fall";
+            hikeDifficultyValue.Content = hikeInfo.Difficulty;
+            
+            // loadimage
+            Image myimage = new Image();
+            BitmapImage bi3 = new BitmapImage();
+            bi3.BeginInit();
+            bi3.UriSource = new Uri("HikeProfileimages/" + v + ".jpg", UriKind.Relative);
+            bi3.EndInit();
+            myimage.Source = bi3;
+            System.Diagnostics.Debug.WriteLine(hikeImage.Source.ToString());
+            hikeImage.Source = bi3;
+            System.Diagnostics.Debug.WriteLine(hikeImage.Source.ToString());
         }
 
         private void Back_MouseDown(object sender, MouseEventArgs e)

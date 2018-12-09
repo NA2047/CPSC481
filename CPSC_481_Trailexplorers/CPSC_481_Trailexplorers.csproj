@@ -89,6 +89,7 @@
     <Compile Include="GuidePage.xaml.cs">
       <DependentUpon>GuidePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Hike.cs" />
     <Compile Include="HikeItem.xaml.cs">
       <DependentUpon>HikeItem.xaml</DependentUpon>
     </Compile>
@@ -98,9 +99,7 @@
     <Compile Include="HikeProfilePage.xaml.cs">
       <DependentUpon>HikeProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="lineGrow.xaml.cs">
-      <DependentUpon>lineGrow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="loadCSV.cs" />
     <Compile Include="LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
@@ -110,7 +109,7 @@
     <Compile Include="Park.cs" />
     <Compile Include="Province.cs" />
     <Compile Include="Segue.cs" />
-    <Compile Include="Slider.cs" />
+    <Compile Include="Slidercontorl1.cs" />
     <Compile Include="SliderControl3.cs" />
     <Compile Include="testPage.xaml.cs">
       <DependentUpon>testPage.xaml</DependentUpon>
@@ -144,10 +143,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HikeProfilePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="lineGrow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +185,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="files\parkData.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -245,6 +241,38 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\path.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HikeProfileimages\Cascade Amphitheatre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HikeProfileimages\Cory Pass.jpg" />
+    <Resource Include="HikeProfileimages\Emerald Basin.jpg" />
+    <Resource Include="HikeProfileimages\Emerald Triangle.jpg" />
+    <Resource Include="HikeProfileimages\Hamilton Lake.jpg" />
+    <Resource Include="HikeProfileimages\Helen Lake.jpg" />
+    <Resource Include="HikeProfileimages\Hoodoos.jpg" />
+    <Resource Include="HikeProfileimages\Laughing Falls.jpg" />
+    <Resource Include="HikeProfileimages\Moraine Lake.jpg" />
+    <Resource Include="HikeProfileimages\Plain of Six Glaciers.jpg" />
+    <Resource Include="HikeProfileimages\Saddleback Pass.jpg" />
+    <Resource Include="HikeProfileimages\Sentinel Pass.jpg" />
+    <Resource Include="HikeProfileimages\Sherbrooke Lake.JPG" />
+    <Resource Include="HikeProfileimages\Twin Falls.jpg" />
+    <Resource Include="HikeProfileimages\Whaleback.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HikeProfileimages\Big Beehive.jpg" />
+    <Resource Include="HikeProfileimages\Bourgeau Lake and Harvey Pass.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\path2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\path3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\path4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
