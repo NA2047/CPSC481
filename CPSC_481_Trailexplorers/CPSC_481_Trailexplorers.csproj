@@ -265,5 +265,14 @@
     <Resource Include="HikeProfileimages\Big Beehive.jpg" />
     <Resource Include="HikeProfileimages\Bourgeau Lake and Harvey Pass.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\path2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\path3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\path4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
