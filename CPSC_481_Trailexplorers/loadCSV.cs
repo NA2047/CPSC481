@@ -79,6 +79,24 @@ namespace CPSC_481_Trailexplorers
             return poop;
         }
 
+        public static Hike SearchByHikeName(String name)
+        {
+            Hike poop = new Hike();
+            foreach (Hike hike in bigList)
+            {
+
+               if (hike.Name == name)
+                {
+                    poop = hike;
+                    break;
+                }
+            }
+
+
+
+            return poop;
+        }
+
        
     }
 }

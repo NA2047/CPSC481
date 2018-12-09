@@ -84,8 +84,15 @@ namespace CPSC_481_Trailexplorers
                 return false;
             }
 
-
-            filterResults.Add("park", dropDownPark.Text);
+            if (filterResults.ContainsKey("park"))
+            {
+                filterResults["park"] =  dropDownPark.Text;
+            }
+            else
+            {
+                filterResults.Add("park", dropDownPark.Text);
+            }
+         
             return true;
 
         }
@@ -101,8 +108,15 @@ namespace CPSC_481_Trailexplorers
             {
                 return false;
             }
-            filterResults.Add("difficulty", checkedButton.Content);
-
+            //filterResults.Add("difficulty", checkedButton.Content);
+            if (filterResults.ContainsKey("difficulty"))
+            {
+                filterResults["difficulty"] = checkedButton.Content;
+            }
+            else
+            {
+                filterResults.Add("difficulty", checkedButton.Content);
+            }
 
             return true;
 
@@ -121,6 +135,8 @@ namespace CPSC_481_Trailexplorers
             {
                 return false;
             }
+
+
             filterResults.Add("time", sliderTime.Value);
             filterResults.Add("elevation", sliderElevation.Value);
             filterResults.Add("distance", sliderDistance.Value);
