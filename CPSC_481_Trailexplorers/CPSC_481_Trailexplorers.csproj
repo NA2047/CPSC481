@@ -107,6 +107,7 @@
     <Compile Include="MWVM.cs" />
     <Compile Include="MyComboBoxItem.cs" />
     <Compile Include="Park.cs" />
+    <Compile Include="PointConverter.cs" />
     <Compile Include="Province.cs" />
     <Compile Include="Segue.cs" />
     <Compile Include="Slidercontorl1.cs" />
@@ -185,7 +186,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="files\parkData.csv" />
+    <None Include="files\parkData2.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

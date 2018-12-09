@@ -35,7 +35,7 @@ namespace CPSC_481_Trailexplorers
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Segue.Switch(new HikeProfilePage());
+            Segue.Switch(new HikeProfilePage( hikename));
         }
 
         public void setHike(String value)
@@ -43,7 +43,7 @@ namespace CPSC_481_Trailexplorers
             hikename = value;
             StringBuilder queryAddress = new StringBuilder();
             queryAddress.Append("http://maps.google.com/maps?q=");
-            queryAddress.Append(value);
+            queryAddress.Append(value+" Hike Canada");
             query = queryAddress.ToString();
 
         }

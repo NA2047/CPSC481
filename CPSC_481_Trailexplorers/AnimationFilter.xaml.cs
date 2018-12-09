@@ -36,8 +36,26 @@ namespace CPSC_481_Trailexplorers
             double pas = h2 / 24.0;
             //darken.Opacity = pas;
             System.Diagnostics.Debug.WriteLine(pas);
+            System.Windows.Media.Color a1 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#99BFE5");
+            System.Windows.Media.Color a2 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#A8B5CE");
+            System.Windows.Media.Color a3 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#D6827A");
+            System.Windows.Media.Color a4 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#E36A5F");
+
+            //System.Drawing.Point p1 = new System.Drawing.Point((int)mountain1.Points[0].X, (int)mountain1.Points[0].Y);
+            //System.Drawing.Point p2 = new System.Drawing.Point((int)mountain1.Points[1].X, (int)mountain1.Points[1].Y);
+            LinearGradientBrush linGrBrush1 = new LinearGradientBrush(a1,a2,mountain1.Points[0], mountain1.Points[1]);
+
+            LinearGradientBrush linGrBrush2 = new LinearGradientBrush(a3, a4, mountain1.Points[0], mountain1.Points[1]);
+            
+            mountain1.Fill = linGrBrush2;
+            mountain.Fill = linGrBrush2;
+            sky.Background = linGrBrush1;
+
+            //LinearGradientBrush linGrBrush = new LinearGradientBrush(new System.Drawing.Point((int)mountain1.Points[0].X, (int)mountain1.Points[0].Y), new System.Drawing.Point((int)mountain1.Points[1].X, (int)mountain1.Points[1].Y), a1, a2);
             // Create image.
-           
+            //99BFE5
+
+            //LinearGradientBrush linGrBrush = new Line
 
 
             //elevationAnimationFill.fi
@@ -170,14 +188,6 @@ namespace CPSC_481_Trailexplorers
 
 
 
-
-        }
-
-       
-
-        private void PlaceSun()
-        {
-            var time = DateTime.Now.TimeOfDay;
 
         }
 

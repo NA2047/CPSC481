@@ -13,7 +13,7 @@
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
-        <Label x:Name="hikeName" Content="Big Beehive" HorizontalAlignment="Left" Margin="110,53,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label  x:Name="hikeName" Content="Big Beehive" Margin="17,58,14,0" VerticalAlignment="Top" FontSize="28" HorizontalContentAlignment="Center"/>
         <Label x:Name="hikeTime" Content="Time" HorizontalAlignment="Left" Margin="39,414,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label x:Name="hikeDistance" Content="Distance" HorizontalAlignment="Left" Margin="39,482,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label x:Name="hikeElevation" Content="Elevation" HorizontalAlignment="Left" Margin="39,516,0,0" VerticalAlignment="Top" FontSize="18"/>
@@ -35,6 +35,7 @@
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
+        <Label x:Name="open"  Content="Park Open" HorizontalAlignment="Left" Margin="38,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.477,0.288" Foreground="#FF38E827" FontSize="18" FontWeight="Bold"/>
 
     </Grid>
 </UserControl>

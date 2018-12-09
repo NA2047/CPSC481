@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace CPSC_481_Trailexplorers
 {
@@ -22,6 +23,7 @@ namespace CPSC_481_Trailexplorers
     public partial class HikeProfilePage : UserControl
     {
         private string v;
+        private string hikename;
 
         public HikeProfilePage()
         {
@@ -55,7 +57,22 @@ namespace CPSC_481_Trailexplorers
             hikeElevationValue.Content = hikeInfo.Elevation;
             hikeSeasonValue.Content = "fall";
             hikeDifficultyValue.Content = hikeInfo.Difficulty;
-            
+           
+
+            string expr = @"(open)";
+            Match result = Regex.Match(hikeInfo.Open, expr, RegexOptions.IgnoreCase);
+            if (result.Success)
+            {
+                open.Foreground = new SolidColorBrush(Colors.MediumSpringGreen); 
+         
+            }
+            else
+            {
+                open.Foreground = new SolidColorBrush(Colors.OrangeRed);
+            }
+           
+            open.Content = hikeInfo.Open;
+
             // loadimage
             Image myimage = new Image();
             BitmapImage bi3 = new BitmapImage();
@@ -67,6 +84,7 @@ namespace CPSC_481_Trailexplorers
             hikeImage.Source = bi3;
             System.Diagnostics.Debug.WriteLine(hikeImage.Source.ToString());
         }
+
 
         private void Back_MouseDown(object sender, MouseEventArgs e)
         {
@@ -92,5 +110,7 @@ namespace CPSC_481_Trailexplorers
             Segue.Switch(googleMapPage);
 
         }
+
+
     }
 }

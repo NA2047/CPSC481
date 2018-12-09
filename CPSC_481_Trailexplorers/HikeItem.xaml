@@ -8,10 +8,10 @@
              d:DesignHeight="100" d:DesignWidth="435" Loaded="MyWindow_Loaded">
     <Grid x:Name="backgroundGrid" Background="SeaGreen">
         <Label ToolTip="Elevation of Hike" Canvas.ZIndex="2"  x:Name="elevationDisplayLabel" Content="Label" HorizontalAlignment="Left" Margin="342,-2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White"/>
-        <Label ToolTip="Time taken to Complete Hike in Hours" Canvas.ZIndex="2"  x:Name="timeDisplayLabel" Content="Label" HorizontalAlignment="Left" Margin="10,80,0,-6" VerticalAlignment="Top" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White"/>
-        <Label ToolTip="Length of Hike in Kilometers" Canvas.ZIndex="2"  x:Name="distanceDisplayLabel" Content="Label" HorizontalAlignment="Left" Margin="342,80,0,-6" VerticalAlignment="Top" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White"/>
-        <Label ToolTip="Name of Hike" Canvas.ZIndex="2"  x:Name="parkNameDisplayLabel" Content="Label" HorizontalAlignment="Left" Margin="15,-2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White"/>
-        <Label ToolTip="Indicates if Hike is open or not" Canvas.ZIndex="2"  x:Name="openClosedLabel" Content="Label" HorizontalAlignment="Left" Margin="186,-2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White"/>
+        <Label ToolTip="Time taken to Complete Hike in Hours" Canvas.ZIndex="2"  x:Name="timeDisplayLabel" Content="Label" HorizontalAlignment="Left" Margin="10,80,0,-6" VerticalAlignment="Bottom" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Bottom"/>
+        <Label ToolTip="Length of Hike in Kilometers" Canvas.ZIndex="2"  x:Name="distanceDisplayLabel" Content="Label" HorizontalAlignment="Left" Margin="342,79,0,-5" VerticalAlignment="Bottom" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Bottom"/>
+        <Label ToolTip="Name of Hike" Canvas.ZIndex="2"  x:Name="parkNameDisplayLabel" Content="Label" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White"/>
+        <Label ToolTip="Indicates if Hike is open or not" Canvas.ZIndex="2"  x:Name="openClosedLabel" Content="Label" HorizontalAlignment="Left" Margin="182,0,0,-5" VerticalAlignment="Bottom" RenderTransformOrigin="0.041,-0.079" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Bottom"/>
         <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" Width="auto" Margin="0,24,-0.333,24">
 
             <Image Canvas.ZIndex="1" x:Name="background" Source="BackgroundImages/trail.png" Width="3553" Height="512" Stretch="UniformToFill" MouseDown="Background_MouseDown"/>

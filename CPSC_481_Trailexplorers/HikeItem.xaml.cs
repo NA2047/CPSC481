@@ -50,17 +50,16 @@ namespace CPSC_481_Trailexplorers
 
             Bitmap b = new Bitmap("../../HikeProfileimages/" + parkNameDisplayLabel.Content.ToString() + ".jpg");
             System.Drawing.Color x =  b.GetPixel(540, 200);
-            System.Diagnostics.Debug.WriteLine(b.Width);
-            System.Diagnostics.Debug.WriteLine(b.Height);
-
+         
 
             myimage.Source = bi3;
             System.Diagnostics.Debug.WriteLine(background.Source.ToString());
             background.Source = bi3;
             background.Stretch = Stretch.UniformToFill;
-            var brush = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)x.R, (byte)x.G, (byte)x.B));
+            var brush = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)(x.R*(3.0/4.0)), (byte)(x.G*(3.0/4.0)), (byte)(x.B * (3.0 / 4.0))));
             //var converter = new System.Windows.Media.BrushConverter();
             //var brush = (System.Windows.Media.Brush)converter.ConvertFromString(x.ToString());
+            //System.Windows.Media.Color darkBrush = System.Windows.Forms.ControlPaint.Dark(brush);
             backgroundGrid.Background = brush;
             
         }

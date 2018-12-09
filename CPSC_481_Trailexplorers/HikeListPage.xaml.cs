@@ -24,14 +24,15 @@ namespace CPSC_481_Trailexplorers
     {
         private String searchTextvalue = "";
         public String ds = null;
-        private Hashtable hikes = new Hashtable();
+        public static Hashtable displayHikes = new Hashtable();
+        private bool didSearch = false; 
 
         public HikeListPage()
         {
             InitializeComponent();
         
-            Hashtable results = FilterPage.filterResults;
-            hikes = loadCSV.SearchOption(results);
+            //Hashtable results = FilterPage.filterResults;
+            //displayHikes = loadCSV.SearchOption(results);
             CreateList();
 
         }
@@ -41,7 +42,7 @@ namespace CPSC_481_Trailexplorers
             InitializeComponent();
 
             Hashtable results = FilterPage.filterResults;
-            hikes = loadCSV.SearchOption(results);
+            displayHikes = loadCSV.SearchOption(results);
             CreateList();
 
         }
@@ -62,21 +63,12 @@ namespace CPSC_481_Trailexplorers
                 hikeListView.Children.Clear();
             //}
            
-            //List<HikeItem> hikeList;
-
-            //
-            //HikeItem hikeitem1 = new HikeItem();
-            //HikeItem hikeitem2 = new HikeItem();
-            //HikeItem hikeitem3 = new HikeItem();
-            //HikeItem hikeitem4 = new HikeItem();
-            //HikeItem hikeitem5 = new HikeItem();
-            //HikeItem[] RolesList = new HikeItem[] { hikeitem, hikeitem1, hikeitem2, hikeitem3, hikeitem4, hikeitem5 };
-
-            foreach (DictionaryEntry pair in hikes)
+     
+            foreach (DictionaryEntry pair in displayHikes)
             {
                 HikeItem hikeitem = new HikeItem();
 
-                //System.Diagnostics.Debug.WriteLine(item);
+   
                 Hike temp = (Hike)pair.Value;
                 hikeitem.distanceDisplayLabel.Content = (string)temp.Distance + " km";
                 hikeitem.elevationDisplayLabel.Content = (string)temp.Elevation + " m";
@@ -101,21 +93,34 @@ namespace CPSC_481_Trailexplorers
 
         private void searchBoxInput_TextChanged(object sender, TextChangedEventArgs e)
         {
+            didSearch = true;
+            hikeListView.Children.Clear();
             searchTextvalue = searchBoxInput.Text;
+
+            if(searchTextvalue == "")
+            {
+                return;
+            }
             Hashtable searchedHike = loadCSV.SearchInput(searchTextvalue);
             if (searchedHike.Count == 0)
             {
                 return;
             }
-            hikes = new Hashtable();
-            hikes = searchedHike;
+            displayHikes = new Hashtable();
+            displayHikes = searchedHike;
             CreateList();
+           
 
         System.Diagnostics.Debug.WriteLine(searchTextvalue);
-            //    test();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Segue.Switch(new FilterPage());
+        }
+
+     
+        private void BackToFilter_Click(object sender, RoutedEventArgs e)
         {
             Segue.Switch(new FilterPage());
         }
