@@ -24,6 +24,17 @@ namespace CPSC_481_Trailexplorers
         {
           
             InitializeComponent();
+            // loadimage
+            Image myimage = new Image();
+            BitmapImage bi3 = new BitmapImage();
+            bi3.BeginInit();
+            bi3.UriSource = new Uri("HikeProfileimages/"+hikeName.Content.ToString()+".jpg",UriKind.Relative);
+            bi3.EndInit();
+            myimage.Source = bi3;
+            System.Diagnostics.Debug.WriteLine(hikeImage.Source.ToString());
+            hikeImage.Source = bi3;
+            System.Diagnostics.Debug.WriteLine(hikeImage.Source.ToString());
+            //hikeImage.Source = new Uri(hikeName.Content.ToString());
         }
 
         private void Back_MouseDown(object sender, MouseEventArgs e)

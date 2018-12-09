@@ -25,6 +25,7 @@ namespace CPSC_481_Trailexplorers
         public HikeItem()
         {
             InitializeComponent();
+
         }
 
         private void Background_MouseDown(object sender, MouseButtonEventArgs e)
