@@ -109,7 +109,7 @@
     <Compile Include="Park.cs" />
     <Compile Include="Province.cs" />
     <Compile Include="Segue.cs" />
-    <Compile Include="Slider.cs" />
+    <Compile Include="Slidercontorl1.cs" />
     <Compile Include="SliderControl3.cs" />
     <Compile Include="testPage.xaml.cs">
       <DependentUpon>testPage.xaml</DependentUpon>

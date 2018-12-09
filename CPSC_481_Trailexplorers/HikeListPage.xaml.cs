@@ -32,7 +32,7 @@ namespace CPSC_481_Trailexplorers
         
             Hashtable results = FilterPage.filterResults;
             hikes = loadCSV.SearchOption(results);
-            createList();
+            CreateList();
 
         }
 
@@ -42,7 +42,7 @@ namespace CPSC_481_Trailexplorers
 
             Hashtable results = FilterPage.filterResults;
             hikes = loadCSV.SearchOption(results);
-            createList();
+            CreateList();
 
         }
 
@@ -51,7 +51,7 @@ namespace CPSC_481_Trailexplorers
             Segue.Switch(new FilterPage());
         }
 
-        private void createList()
+        private void CreateList()
         {
             //if (hikeListView == null)
             //{
@@ -102,7 +102,16 @@ namespace CPSC_481_Trailexplorers
         private void searchBoxInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             searchTextvalue = searchBoxInput.Text;
-            System.Diagnostics.Debug.WriteLine(searchTextvalue);
+            Hashtable searchedHike = loadCSV.SearchInput(searchTextvalue);
+            if (searchedHike.Count == 0)
+            {
+                return;
+            }
+            hikes = new Hashtable();
+            hikes = searchedHike;
+            CreateList();
+
+        System.Diagnostics.Debug.WriteLine(searchTextvalue);
             //    test();
         }
 

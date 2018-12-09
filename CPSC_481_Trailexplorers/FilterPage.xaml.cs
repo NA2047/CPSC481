@@ -137,9 +137,17 @@ namespace CPSC_481_Trailexplorers
             }
 
 
-            filterResults.Add("time", sliderTime.Value);
-            filterResults.Add("elevation", sliderElevation.Value);
-            filterResults.Add("distance", sliderDistance.Value);
+            //filterResults.Add("time", sliderTime.Value);
+            //filterResults.Add("elevation", sliderElevation.Value);
+            //filterResults.Add("distance", sliderDistance.Value);
+
+            filterResults["time"] = sliderTime.Value;
+
+            filterResults["elevation"] = sliderElevation.Value;
+
+            filterResults["distance"] = sliderDistance.Value;
+
+         
             return true;
 
 

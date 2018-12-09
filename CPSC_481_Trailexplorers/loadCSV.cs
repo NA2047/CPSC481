@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace CPSC_481_Trailexplorers
 {
@@ -81,14 +82,45 @@ namespace CPSC_481_Trailexplorers
 
         public static Hike SearchByHikeName(String name)
         {
+            //string lowerCase = name.ToLower();
+            string expr = @"("+ name + ")"; 
+           
+
             Hike poop = new Hike();
             foreach (Hike hike in bigList)
             {
-
-               if (hike.Name == name)
+                //MatchCollection mc = Regex.Matches(hike.Name, expr);
+                Match result = Regex.Match(hike.Name, expr,RegexOptions.IgnoreCase);
+                if (result.Success)
                 {
                     poop = hike;
-                    break;
+                    return poop;
+                }
+
+                //if (hike.Name == name)
+                //{
+                //    poop = hike;
+                //    break;
+                //}
+            }
+
+
+            poop = null;
+            return poop;
+        }
+
+        public static Hashtable SearchInput(String name)
+        {
+            Hashtable poop = new Hashtable();
+            string expr = @"(" + name + ")";
+
+            foreach (Hike hike in bigList)
+            {
+                Match result = Regex.Match(hike.Name, expr, RegexOptions.IgnoreCase);
+                if (result.Success)
+                {
+                    poop[hike.Name] = hike;
+                 
                 }
             }
 
@@ -97,6 +129,8 @@ namespace CPSC_481_Trailexplorers
             return poop;
         }
 
-       
+
+
+
     }
 }
