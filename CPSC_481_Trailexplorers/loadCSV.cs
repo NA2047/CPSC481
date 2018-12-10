@@ -135,46 +135,60 @@ namespace CPSC_481_Trailexplorers
         public static Hashtable SearchInput(String searchTerm)
         {
             //string lowerCase = name.ToLower();
-            string expr = @"(.*?(" + searchTerm + "))";
+            String expr = @"(.*?(" + searchTerm + "))";
 
-
+            searchTerm = searchTerm.ToLower();
             Hashtable poop = new Hashtable();
             foreach (Hike hike in bigList2)
             {
-                string name = hike.Name;
-                string open = hike.Open;
-                string season = hike.Season;
-                string time = hike.Time;
-                string difficulty = hike.Difficulty;
-                string distance = hike.Distance;
-                string elevation = hike.Elevation;
-                string description = hike.Description;
+                string name = hike.Name.ToLower();
+                string park = hike.Park.ToLower();
+                string open = hike.Open.ToLower();
+                string season = hike.Season.ToLower();
+                string time = hike.Time.ToLower();
+                string difficulty = hike.Difficulty.ToLower();
+                string distance = hike.Distance.ToLower();
+                string elevation = hike.Elevation.ToLower();
+                string description = hike.Description.ToLower();
+                //int gp = difficulty.IndexOf(searchTerm);
 
 
 
                 //MatchCollection mc = Regex.Matches(hike.Name, expr);
-                Match matchName = Regex.Match(name, expr, RegexOptions.IgnoreCase);
-                Match matchOpen = Regex.Match(open, expr, RegexOptions.IgnoreCase);
+                //Match matchName = Regex.Match(name, expr, RegexOptions.IgnoreCase);
+                //Match matchOpen = Regex.Match(open, expr, RegexOptions.IgnoreCase);
 
-                Match matchSeason = Regex.Match(season, expr, RegexOptions.IgnoreCase);
+                //Match matchSeason = Regex.Match(season, expr, RegexOptions.IgnoreCase);
 
-                Match matchTime = Regex.Match(time, expr, RegexOptions.IgnoreCase);
+                //Match matchTime = Regex.Match(time, expr, RegexOptions.IgnoreCase);
 
-                Match matchDifficulty = Regex.Match(name, expr, RegexOptions.IgnoreCase);
+                //Match matchDifficulty = Regex.Match(name, expr, RegexOptions.IgnoreCase);
 
-                Match matchDistance = Regex.Match(distance, expr, RegexOptions.IgnoreCase);
-                Match matchElevation = Regex.Match(elevation, expr, RegexOptions.IgnoreCase);
-                Match matchDescription = Regex.Match(description, expr, RegexOptions.IgnoreCase);
+                //Match matchDistance = Regex.Match(distance, expr, RegexOptions.IgnoreCase);
+                //Match matchElevation = Regex.Match(elevation, expr, RegexOptions.IgnoreCase);
+                //Match matchDescription = Regex.Match(description, expr, RegexOptions.IgnoreCase);
+
+                int matchName = name.IndexOf(searchTerm);
+                int matchOpen = open.IndexOf(searchTerm);
+                int matchPark = park.IndexOf(searchTerm);
+
+                int matchSeason = season.IndexOf(searchTerm);
+
+                int matchTime = time.IndexOf(searchTerm);
+
+                int matchDifficulty = difficulty.IndexOf(searchTerm);
+
+                int matchDistance = distance.IndexOf(searchTerm);
+                int matchElevation = elevation.IndexOf(searchTerm);
+                int matchDescription = description.IndexOf(searchTerm);
 
 
 
 
 
-
-                if (matchName.Success || matchOpen.Success || matchSeason.Success || matchTime.Success || matchDifficulty.Success || matchDistance.Success || matchElevation.Success || matchDescription.Success)
+                if (matchName == 0 || matchOpen == 0 || matchSeason == 0 || matchTime == 0 || matchDifficulty == 0 || matchDistance == 0 || matchElevation == 0 || matchDescription == 0 || matchPark == 0)
                 {
                     poop[hike.Name] = hike;
-
                 }
 
 
