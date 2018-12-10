@@ -321,6 +321,11 @@ namespace CPSC_481_Trailexplorers
         {
             Segue.Switch(new GuidePage());
         }
+
+        private void BackArrowTop_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Segue.Switch(new GuidePage());
+        }
     }
 }
  
