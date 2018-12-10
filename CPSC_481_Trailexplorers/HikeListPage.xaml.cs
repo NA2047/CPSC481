@@ -48,6 +48,16 @@ namespace CPSC_481_Trailexplorers
 
         }
 
+        public HikeListPage(int values)
+        {
+            InitializeComponent();
+
+            //Hashtable results = FilterPage.filterResults;
+            //displayHikes = loadCSV.SearchOption(results);
+            CreateList();
+
+        }
+
         private void Back_MouseDown(object sender, MouseEventArgs e)
         {
             Segue.Switch(new FilterPage());

@@ -29,7 +29,7 @@ namespace CPSC_481_Trailexplorers
 
         private void Find_Hike(object sender, RoutedEventArgs e)
         {
-            Segue.Switch(new HikeListPage());
+            Segue.Switch(new HikeListPage(2));
         }
 
         private void Help_Filter(object sender, RoutedEventArgs e)
