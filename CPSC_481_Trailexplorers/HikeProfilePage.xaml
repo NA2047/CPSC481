@@ -29,7 +29,7 @@
         <ScrollViewer x:Name="hikeDescriptionScroll" HorizontalAlignment="Left" Margin="17,639,0,29" Width="381">
             <TextBlock x:Name="hikeDescriptionValue" TextWrapping="Wrap" FontSize="20"><Span Foreground="Black"><Run Text="Hikers, cross country skiers and snowshoers unite! "/></Span><LineBreak/><Span Foreground="Black"><Run Text="Chester Lake is a year-round trail that meanders through "/></Span><LineBreak/><Run Text="forests and meadows leading to the emerald waters of Chester Lake itself. Most of the elevation gain is towards the beginning of the hike before the trail levels off and leads you through beautiful meadows to the lake."/><Run Text="ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggdgdfgdfgdfgdfgdfgdfgdfgdfg"/><LineBreak/><Run/></TextBlock>
         </ScrollViewer>
-        <Image ToolTip="Hit the wrong button?! click me to head back to the Selction page" HorizontalAlignment="Left" Height="46" Margin="372,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/homeIcon.png" MouseDown="Home_Button"/>
+        <Image ToolTip="Hit the wrong button?! click me to head back to the Guide page" HorizontalAlignment="Left" Height="46" Margin="372,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/homeIcon.png" MouseDown="Home_Button"/>
         <Image HorizontalAlignment="Left" Height="177" Margin="221,414,0,0" VerticalAlignment="Top" Width="177" Source="Logos/googleMapLogo2.png" MouseDown="Image_MouseDown">
             <Image.Effect>
                 <DropShadowEffect/>
