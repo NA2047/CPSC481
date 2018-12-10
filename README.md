@@ -31,12 +31,12 @@ In order to the run the application, follow the instructions:
 ### Scenario A
 - The novice user launches the application, and selects the `Help` button to receive a walkthrough of the application in order to find a trail most suitable for them.
 - The user is greeted with the `Filter` screen with a variety of differenty trail properties to select from.
-- Next, from the dropdown menu the user selects `Province` Alberta and `Park` Banff.
-- In addition, the user picks easy for `Difficulty` and anything that has `Time` up to 5 hours in duration while leaving all other properties unchanged.
+- Next, from the dropdown menu the user selects `Province` Alberta and `Park` Banff National Park.
+- In addition, the user picks easy for `Difficulty` and anything that has `Time` up to 4 hours in duration, while maxing out the `Distance` slider, and `Elevation` up to 2.
 - Finally, the user selects the `Apply` button and is taken to the following screen.
 - The user is shown a list of available trails matching the requirements they set in the previous screen.
-- The user decides to select on `Chester Lake` as it seems the most interesting, and the screen transitions to the trail `Profile` page.
-- In the `Profile` page, the user scans all available information and clicks on the `Directions Here` button to be redirected to Google Maps for driving directions to the trailhead.
+- The user decides to select on `Big Beehive` as it seems the most interesting, and the screen transitions to the trail `Profile` page.
+- In the `Profile` page, the user scans all available information and clicks on the `Click For Map` button to be redirected to Google Maps for driving directions to the trailhead.
 
 ### Scenario B
 - The expert user launches the application, and selects the `Let` button to in order to immediately receive a list of all available trails to them.
