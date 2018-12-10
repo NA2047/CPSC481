@@ -88,7 +88,7 @@ namespace CPSC_481_Trailexplorers
 
         private void Back_MouseDown(object sender, MouseEventArgs e)
         {
-            Segue.Switch(new HikeListPage());
+            Segue.Switch(new HikeListPage("nope"));
         }
 
         //private void WebBrowser_Loaded(object sender, RoutedEventArgs e)
@@ -99,7 +99,7 @@ namespace CPSC_481_Trailexplorers
         //}
         private void Home_Button(object sender, MouseEventArgs e)
         {
-            Segue.Switch(new FilterPage());
+            Segue.Switch(new GuidePage());
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)

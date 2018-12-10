@@ -9,22 +9,24 @@
             >
     <Grid Background="White">
 
-        <Image HorizontalAlignment="Left" Height="46" Margin="0,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/backArrow.png" MouseDown="Back_MouseDown"/>
-        <TextBox  Text="{Binding Name, Delay=70000}" ToolTip="An example of s valid search would be the name of a Hike or a Federal park where the hike is located " TextChanged="searchBoxInput_TextChanged" x:Name="searchBoxInput"  HorizontalAlignment="Left" Height="23" Margin="144,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" RenderTransformOrigin="-0.034,0.946"/>
+        <Image ToolTip="Head back to the Previous Page" HorizontalAlignment="Left" Height="46" Margin="0,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/backArrow.png" MouseDown="Back_MouseDown"/>
+        <TextBox ToolTip="In this box you can search for the following (Elevation, Time, Distance, Hike Name, Park, Open or Closed Parks)"  TextChanged="searchBoxInput_TextChanged" x:Name="searchBoxInput"  HorizontalAlignment="Left" Height="23" Margin="144,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" RenderTransformOrigin="-0.034,0.946"/>
         <ScrollViewer VerticalScrollBarVisibility="Hidden" Height="auto" Margin="0,268,0,0" VerticalAlignment="Top" Width="auto">
             <StackPanel local:MarginSetter.Margin="1" x:Name="hikeListView"  VerticalAlignment="Top"  Height="auto" Width="auto"/>
 
         </ScrollViewer>
-        <Image HorizontalAlignment="Left" Height="46" Margin="372,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/homeIcon.png" MouseDown="Image_MouseDown"/>
-       <Image x:Name="logoImage" Canvas.ZIndex="3" 
-               Source="Logos/logoWBold.png" RenderOptions.BitmapScalingMode="Fant" Opacity="1" Margin="108,0,108,533" Stretch="UniformToFill"/>
+        <Image ToolTip="Hit the wrong button?! click me to head back to the Selction page" HorizontalAlignment="Left" Height="46" Margin="372,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/homeIcon.png" MouseDown="Image_MouseDown"/>
+        <Image x:Name="logoImage" Canvas.ZIndex="3" 
+               Source="Logos/logoWBold.png" RenderOptions.BitmapScalingMode="Fant" Opacity="1" Margin="100,-59,116,622" Stretch="UniformToFill"/>
         <Image x:Name="backArrowTop" HorizontalAlignment="Left" Height="46" Margin="0,10,0,0" VerticalAlignment="Top" Width="46" Source="Assets/backArrow.png" MouseDown="Back_MouseDown"/>
         <Image x:Name="backGroundTop" HorizontalAlignment="Left"  Margin="0,53,0,533" Width="432" Source="Backgroundimages/trail.png" Stretch="UniformToFill" >
             <Image.Effect>
                 <BlurEffect/>
             </Image.Effect>
         </Image>
-        <Button x:Name="backToFilter" Content="Filter" HorizontalAlignment="Left" Margin="330,243,0,0" VerticalAlignment="Top" Width="75" Click="BackToFilter_Click"/>
+        <Button ToolTip="Navigate to Filter menu" x:Name="backToFilter" Content="Filter" HorizontalAlignment="Left" Margin="330,243,0,0" VerticalAlignment="Top" Width="75" Click="BackToFilter_Click"/>
+        <Label x:Name="Hike_Count" Content="Label" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Width="129"/>
+        <Label x:Name="messageNone" Canvas.ZIndex="3"  Content="If Nothing is found below will be empty &#xD;&#xA;head back to the filter to search again&#xD;&#xA; or use the search field" HorizontalAlignment="Center" Margin="0,134,0,0" VerticalAlignment="Top" Foreground="#FFF6F6F6" FontSize="20" FontWeight="Bold" Width="432" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="101"/>
 
 
 

@@ -37,7 +37,7 @@
         </Label>
         <Label  x:Name="locationLablel" Content="Hike Location" Margin="153,255,153,61.655" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
 
-        <ComboBox x:Name="Province" ItemsSource="{Binding ProvinceCollection}" SelectedItem="{Binding SelectedProvince}" DisplayMemberPath="ProvinceName" IsEditable="False" Margin="40,294,229,0" Height="31" IsDropDownOpen="False" IsReadOnly="False" VerticalAlignment="Top" >
+        <ComboBox ToolTip="Choose what Province you want to find a Hike in" x:Name="Province" ItemsSource="{Binding ProvinceCollection}" SelectedItem="{Binding SelectedProvince}" DisplayMemberPath="ProvinceName" IsEditable="False" Margin="40,294,229,0" Height="31" IsDropDownOpen="False" IsReadOnly="False" VerticalAlignment="Top" >
             <!--<ComboBoxItem Content="ALBERTA"/>
             <ComboBoxItem Content="BRITISH COLUMBIA"/>
             <ComboBoxItem Content="MANITOBA"/>
@@ -52,7 +52,7 @@
             <ComboBoxItem Content="NUNAVUT"/>
             <ComboBoxItem Content="YUKON"/>-->
         </ComboBox>
-        <ComboBox x:Name="dropDownPark" ItemsSource="{Binding SelectedProvince.Parks}"  DisplayMemberPath="ParkName" IsEditable="False" Margin="233,294,36,0" Height="31" Background="Black" VerticalAlignment="Top" Loaded="dropDownPark_Loaded" SelectionChanged="dropDownPark_SelectionChanged" >
+        <ComboBox ToolTip="Choose what Federal Park you want to Hike in" x:Name="dropDownPark" ItemsSource="{Binding SelectedProvince.Parks}"  DisplayMemberPath="ParkName" IsEditable="False" Margin="233,294,36,0" Height="31" Background="Black" VerticalAlignment="Top" Loaded="dropDownPark_Loaded" SelectionChanged="dropDownPark_SelectionChanged" >
             <!--<ComboBoxItem Content="A"/>
             <ComboBoxItem Content="B"/>
             <ComboBoxItem Content="M"/>
@@ -70,7 +70,7 @@
 
 
         <Label  x:Name="difficultyLabel" Content="Difficulty" Margin="171,331,171,403" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.RowSpan="2" HorizontalAlignment="Center"/>
-        <StackPanel x:Name="containerRadio" DataContext="StaticResource Settings" Margin="0,14.345,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="1" >
+        <StackPanel ToolTip="Select your difficulty, this metric is created based on users feedback" x:Name="containerRadio" DataContext="StaticResource Settings" Margin="0,14.345,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="1" >
             <RadioButton  x:Name="easyRadio" GroupName="EMH" Content="Easy"   FontSize="16" Margin="50,10,10,10" />
             <RadioButton  x:Name="mediumRadio" GroupName="EMH" Content="Medium"   FontSize="16" Margin="70,10,10,10" />
             <RadioButton  x:Name="hardRadio" GroupName="EMH" Content="Hard"   FontSize="16" Margin="70,10,50,10" />
@@ -79,7 +79,7 @@
 
         <Label  x:Name="timeLablel" Content="Time (Hr)" Margin="171,0,171,322" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Bottom"/>
 
-        <Slider x:Name="sliderTime"  Value="{Binding SelectedProvince.SliderCollection }" ValueChanged="SliderTime_ValueChanged"  Margin="80,105.345,80,287" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
+        <Slider ToolTip="Select how long you want you hike to take (NOTE: based on your selection if no hikes meet your choice the closest Hike to your time will be shown)" x:Name="sliderTime"  Value="{Binding SelectedProvince.SliderCollection }" ValueChanged="SliderTime_ValueChanged"  Margin="80,105.345,80,287" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>
@@ -94,7 +94,7 @@
         </Slider>
         <Label x:Name="timeValueLabel" Content="0" Margin="208,130.333,171,0" VerticalAlignment="Top" RenderTransformOrigin="3.148,0.68" FontSize="14" Grid.Row="1"/>
         <Label  x:Name="elevationLabel" Content="Elevation 100ft" Margin="140,148.345,134,235" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1" HorizontalAlignment="Center"/>
-        <Slider x:Name="sliderElevation" ValueChanged="SliderElevation_ValueChanged" Margin="80,187.345,80,205" RenderTransformOrigin="-0.069,0.143" TickFrequency=".5" Maximum="10" Minimum="0" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
+        <Slider ToolTip="Select the elevation of the hike you want to take (NOTE: based on your selection if no hikes meet your choice the closest Hike to your elevation will be shown)"  x:Name="sliderElevation" ValueChanged="SliderElevation_ValueChanged" Margin="80,187.345,80,205" RenderTransformOrigin="-0.069,0.143" TickFrequency=".5" Maximum="10" Minimum="0" TickPlacement="BottomRight"  IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>
@@ -110,7 +110,7 @@
         <Label x:Name="elevationValueLabel" Content="0" Margin="208,214.333,171,0" VerticalAlignment="Top" FontSize="14" Grid.Row="1"/>
 
         <Label  x:Name="distanceLabel" Content="Distance (Km)" Margin="140,240.333,153,143" RenderTransformOrigin="0.881,-0.293" FontSize="18" FontWeight="Bold" Grid.Row="1" HorizontalAlignment="Center"/>
-        <Slider x:Name="sliderDistance" ValueChanged="SliderDistance_ValueChanged" Margin="80,279.345,80,113" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Row="1">
+        <Slider ToolTip="Select the distance of the hike you want to take (NOTE: based on your selection if no hikes meet your choice the closest Hike to your distance will be shown)" x:Name="sliderDistance" ValueChanged="SliderDistance_ValueChanged" Margin="80,279.345,80,113" RenderTransformOrigin="-0.069,0.143" Maximum="10" Minimum="0" TickFrequency=".5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Row="1">
             <Slider.Effect>
                 <DropShadowEffect ShadowDepth="1"/>
             </Slider.Effect>
@@ -123,7 +123,7 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Button x:Name="filterButton" Content="Apply" Margin="148,333.333,153,0" Click="Apply_Filter_Button" FontSize="18" Background="Azure" Height="31" VerticalAlignment="Top" Grid.Row="1">
+        <Button ToolTip="Apply your filter criteria and search for Hikes" x:Name="filterButton" Content="Apply" Margin="148,333.333,153,0" Click="Apply_Filter_Button" FontSize="18" Background="Azure" Height="31" VerticalAlignment="Top" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -132,6 +132,7 @@
 
 
         <local:AnimationFilter x:Name="animationView" Height="150" Margin="0,46,0,0" VerticalAlignment="Top"/>
+        <Image ToolTip="Hit the wrong button?! click me to head back to the Selction page" HorizontalAlignment="Left" Height="46" Margin="376,-5,0,0" VerticalAlignment="Top" Width="46" Source="Assets/homeIcon.png" MouseDown="Image_MouseDown" RenderTransformOrigin="0.667,0.159"/>
 
 
 

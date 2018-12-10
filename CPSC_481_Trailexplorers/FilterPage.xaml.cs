@@ -33,10 +33,10 @@ namespace CPSC_481_Trailexplorers
             InitializeComponent();
             this.DataContext = new MWVM();
             List<Hike> poop = loadCSV.bigList;
-            foreach (Hike thing in poop)
-            {
-                System.Diagnostics.Debug.WriteLine(thing.Elevation);
-            }
+            //foreach (Hike thing in poop)
+            //{
+            //    System.Diagnostics.Debug.WriteLine(thing.Elevation);
+            //}
 
         }
         /// <summary>
@@ -315,6 +315,11 @@ namespace CPSC_481_Trailexplorers
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Segue.Switch(new GuidePage());
         }
     }
 }

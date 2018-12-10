@@ -31,7 +31,7 @@ namespace CPSC_481_Trailexplorers
                 this.GetType().GetProperty(propertyName).SetValue(this, value, null); }
         }
 
-        public string Bar { get; set; }
+
 
         public String Elevation { get => elevation; set => elevation = value; }
         public string Time { get => time; set => time = value; }

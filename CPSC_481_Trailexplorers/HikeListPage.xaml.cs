@@ -31,9 +31,10 @@ namespace CPSC_481_Trailexplorers
         {
             InitializeComponent();
         
-            //Hashtable results = FilterPage.filterResults;
-            //displayHikes = loadCSV.SearchOption(results);
+            Hashtable results = FilterPage.filterResults;
+            displayHikes = loadCSV.SearchOption(results);
             CreateList();
+
 
         }
 
@@ -41,8 +42,8 @@ namespace CPSC_481_Trailexplorers
         {
             InitializeComponent();
 
-            Hashtable results = FilterPage.filterResults;
-            displayHikes = loadCSV.SearchOption(results);
+            //Hashtable results = FilterPage.filterResults;
+            //displayHikes = loadCSV.SearchOption(results);
             CreateList();
 
         }
@@ -88,6 +89,14 @@ namespace CPSC_481_Trailexplorers
 
                 hikeListView.Children.Add(hikeitem);
             }
+            Hike_Count.Content = "Hike Results Count " + hikeListView.Children.Count.ToString();
+
+            //if(hikeListView.Children.Count > 0)
+            //{
+            //    Canvas.SetZIndex(messageNone, 1);
+
+            //    messageNone.Opacity = 0;
+            //}
 
         }
 
@@ -99,6 +108,7 @@ namespace CPSC_481_Trailexplorers
 
             if(searchTextvalue == "")
             {
+                Hike_Count.Content = 0;
                 return;
             }
             Hashtable searchedHike = loadCSV.SearchInput(searchTextvalue);
@@ -116,7 +126,7 @@ namespace CPSC_481_Trailexplorers
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Segue.Switch(new FilterPage());
+            Segue.Switch(new GuidePage());
         }
 
      
