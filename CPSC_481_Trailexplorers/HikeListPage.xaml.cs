@@ -54,6 +54,7 @@ namespace CPSC_481_Trailexplorers
 
             //Hashtable results = FilterPage.filterResults;
             //displayHikes = loadCSV.SearchOption(results);
+            displayHikes = loadCSV.stuff();
             CreateList();
 
         }

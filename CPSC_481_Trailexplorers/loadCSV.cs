@@ -12,17 +12,17 @@ namespace CPSC_481_Trailexplorers
 {
     static class loadCSV
     {
-        public static List<Hike> bigList
+        public static Hashtable bigList
         {
             get { return stuff(); }
             set { }
         }
 
-        public static List<Hike> bigList2 = null;
+        public static Hashtable bigList2 = new Hashtable();
 
-        public static List<Hike> stuff()
+        public static Hashtable stuff()
         {
-            List<Hike> allH = new List<Hike>(20);
+            Hashtable allH = new Hashtable();
             string line;
             FileStream aFile = new FileStream("../../files/parkData2.csv", FileMode.Open);
             StreamReader sr = new StreamReader(aFile);
@@ -40,7 +40,7 @@ namespace CPSC_481_Trailexplorers
                     newHike[headers[i]] = csvFields[i];
 
                 }
-                allH.Add(newHike);
+                allH[newHike.Name] = newHike;
 
 
             }
@@ -64,11 +64,11 @@ namespace CPSC_481_Trailexplorers
 
 
 
-            foreach (Hike hike in bigList)
+            foreach (DictionaryEntry pair in bigList2)
             {
-
-                String low = (string)hike.Time;
-                String high = (string)hike.Time;
+                Hike hike = (Hike)pair.Value;
+                String low = hike.Time;
+                String high = hike.Time;
                 double rangeL = double.Parse(low.Split(Convert.ToChar("-"))[0]);
                 double rangeH = double.Parse(high.Split(Convert.ToChar("-"))[1]);
 
@@ -139,8 +139,9 @@ namespace CPSC_481_Trailexplorers
 
             searchTerm = searchTerm.ToLower();
             Hashtable poop = new Hashtable();
-            foreach (Hike hike in bigList2)
+            foreach (DictionaryEntry pair in bigList2)
             {
+                Hike hike = (Hike)pair.Value;
                 string name = hike.Name.ToLower();
                 string park = hike.Park.ToLower();
                 string open = hike.Open.ToLower();

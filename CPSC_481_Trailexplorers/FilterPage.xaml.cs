@@ -32,7 +32,7 @@ namespace CPSC_481_Trailexplorers
         {
             InitializeComponent();
             this.DataContext = new MWVM();
-            List<Hike> poop = loadCSV.bigList;
+            Hashtable poop = loadCSV.bigList;
             //foreach (Hike thing in poop)
             //{
             //    System.Diagnostics.Debug.WriteLine(thing.Elevation);
