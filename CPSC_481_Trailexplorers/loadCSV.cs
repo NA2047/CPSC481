@@ -90,9 +90,10 @@ namespace CPSC_481_Trailexplorers
 
 
             Hike poop = new Hike();
-            foreach (Hike hike in bigList2)
+            foreach (DictionaryEntry pair in bigList2)
             {
                 //MatchCollection mc = Regex.Matches(hike.Name, expr);
+                Hike hike = (Hike)pair.Value;
                 Match result = Regex.Match(hike.Name, expr, RegexOptions.IgnoreCase);
                 if (result.Success)
                 {
